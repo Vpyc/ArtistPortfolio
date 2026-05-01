@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, computed, inject, Type} from '@angul
 import {ActivatedRoute} from "@angular/router";
 import {toSignal} from "@angular/core/rxjs-interop";
 import {map} from "rxjs";
-import {PROJECTS} from "../../shared/constants/projects";
+import {CATEGORY_PAGES} from "../../shared/constants/category-pages";
 import {PortfolioCategorySlugEnum} from "../../shared/enums/portfolio-category-slug.enum";
 import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
 import {ImageSectionComponent} from "../../shared/components/image-section/image-section.component";
@@ -28,7 +28,7 @@ import {NgComponentOutlet} from "@angular/common";
 export class PortfolioComponent {
   private route = inject(ActivatedRoute);
 
-  private sectionComponents: Record<SectionTypeEnum, Type<any>> = {
+  private sectionComponents: Record<SectionTypeEnum, Type<unknown>> = {
     [SectionTypeEnum.Image]: ImageSectionComponent,
     [SectionTypeEnum.Gallery]: GallerySectionComponent,
     [SectionTypeEnum.Text]: TextSectionComponent,
@@ -50,6 +50,6 @@ export class PortfolioComponent {
     return this.sectionComponents[section.type];
   }
 
-  project = computed(() => PROJECTS[this.category()]);
+  categoryPage = computed(() => CATEGORY_PAGES[this.category()]);
   protected readonly HeroSizeEnum = HeroSizeEnum;
 }
