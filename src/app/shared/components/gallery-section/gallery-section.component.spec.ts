@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InteriorArtComponent } from './interior-art.component';
+import { GallerySectionComponent } from './gallery-section.component';
 
-describe('InteriorArtComponent', () => {
-  let component: InteriorArtComponent;
-  let fixture: ComponentFixture<InteriorArtComponent>;
+describe('GallerySectionComponent', () => {
+  let component: GallerySectionComponent;
+  let fixture: ComponentFixture<GallerySectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InteriorArtComponent]
+      imports: [GallerySectionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InteriorArtComponent);
+    fixture = TestBed.createComponent(GallerySectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

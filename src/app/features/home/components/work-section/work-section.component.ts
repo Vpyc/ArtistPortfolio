@@ -1,14 +1,13 @@
 import {ChangeDetectionStrategy, Component, inject, Signal} from '@angular/core';
-import {NgForOf, NgOptimizedImage} from "@angular/common";
-import {WorkService} from "../../../../shared/servicies/works.service";
-import {Work} from "../../../../shared/models/work.type";
+import {NgOptimizedImage} from "@angular/common";
+import {WorkService} from "../../../../shared/serviсes/works.service";
+import {Work} from "../../../../shared/interfaces/work.interface";
 import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-work-section',
   standalone: true,
   imports: [
-    NgForOf,
     NgOptimizedImage,
     RouterLink
   ],

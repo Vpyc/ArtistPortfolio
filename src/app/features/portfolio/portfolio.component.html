@@ -1,1 +1,23 @@
-<p>portfolio works!</p>
+@if (project()) {
+  <h1>{{ project().title }}</h1>
+
+  @for (section of project().sections; track $index) {
+
+    @switch (section.type) {
+
+      @case (SectionTypeEnum.Image) {
+        <app-image-section [section]="section" />
+      }
+
+      @case (SectionTypeEnum.Gallery) {
+        <app-gallery-section/>
+      }
+
+      @case (SectionTypeEnum.Text) {
+        <app-text-section/>
+      }
+
+    }
+
+  }
+}

@@ -1,6 +1,6 @@
 import {computed, Injectable, Signal, signal} from '@angular/core';
-import {Work} from '../models/work.type';
-import {PortfolioCategory} from "../enums/portfolio-category.enum";
+import {Work} from '../interfaces/work.interface';
+import {PortfolioCategorySlugEnum} from "../enums/portfolio-category-slug.enum";
 
 @Injectable({ providedIn: 'root' })
 export class WorkService {
@@ -8,35 +8,35 @@ export class WorkService {
     {
       id: '1',
       title: 'Бассенджи 1',
-      category: PortfolioCategory.InteriorPainting,
+      category: PortfolioCategorySlugEnum.InteriorPainting,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/interier.png',
     },
     {
       id: '2',
       title: 'Попугай 1',
-      category: PortfolioCategory.InteriorArt,
+      category: PortfolioCategorySlugEnum.InteriorArt,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/paint.png',
     },
     {
       id: '3',
       title: 'Бассенджи 2',
-      category: PortfolioCategory.Panels,
+      category: PortfolioCategorySlugEnum.Panels,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/panno.png',
     },
     {
       id: '4',
       title: 'Лисичка',
-      category: PortfolioCategory.Painting,
+      category: PortfolioCategorySlugEnum.Painting,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/live-paint.png',
     },
     {
       id: '5',
       title: 'Бэкграунд',
-      category: PortfolioCategory.InteriorPainting,
+      category: PortfolioCategorySlugEnum.InteriorPainting,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/main.jpg',
     }

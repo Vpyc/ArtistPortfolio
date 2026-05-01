@@ -18,20 +18,8 @@ export const routes: Routes = [
   },
 
   {
-    path: 'portfolio/interior-painting',
-    loadComponent: () => import('./features/portfolio/pages/interior-painting/interior-painting.component').then(m => m.InteriorPaintingComponent)
-  },
-  {
-    path: 'portfolio/interior-art',
-    loadComponent: () => import('./features/portfolio/pages/interior-art/interior-art.component').then(m => m.InteriorArtComponent)
-  },
-  {
-    path: 'portfolio/painting',
-    loadComponent: () => import('./features/portfolio/pages/painting/painting.component').then(m => m.PaintingComponent)
-  },
-  {
-    path: 'portfolio/panels',
-    loadComponent: () => import('./features/portfolio/pages/panels/panels.component').then(m => m.PanelsComponent)
+    path: 'portfolio/:category',
+    loadComponent: () => import('./features/portfolio/portfolio.component').then(m => m.PortfolioComponent),
   },
 
   {

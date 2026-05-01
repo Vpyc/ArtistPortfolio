@@ -1,6 +1,6 @@
-import {PortfolioCategory} from "../enums/portfolio-category.enum";
+import {PortfolioCategorySlugEnum} from "../enums/portfolio-category-slug.enum";
 
 export interface PortfolioPage {
-  slug: PortfolioCategory;
+  slug: PortfolioCategorySlugEnum;
   title: string;
 }

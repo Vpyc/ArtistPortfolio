@@ -1,4 +1,4 @@
-export enum PortfolioCategory {
+export enum PortfolioCategorySlugEnum {
   InteriorPainting = 'interior-painting',
   InteriorArt = 'interior-art',
   Panels = 'panels',

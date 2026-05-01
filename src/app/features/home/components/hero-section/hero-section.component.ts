@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject, Signal} from '@angular/core';
-import {WorkService} from "../../../../shared/servicies/works.service";
-import {Work} from "../../../../shared/models/work.type";
+import {WorkService} from "../../../../shared/serviсes/works.service";
+import {Work} from "../../../../shared/interfaces/work.interface";
 
 @Component({
   selector: 'app-hero-section',

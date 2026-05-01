@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaintingComponent } from './painting.component';
+import { TextSectionComponent } from './text-section.component';
 
-describe('PaintingComponent', () => {
-  let component: PaintingComponent;
-  let fixture: ComponentFixture<PaintingComponent>;
+describe('TextSectionComponent', () => {
+  let component: TextSectionComponent;
+  let fixture: ComponentFixture<TextSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PaintingComponent]
+      imports: [TextSectionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PaintingComponent);
+    fixture = TestBed.createComponent(TextSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

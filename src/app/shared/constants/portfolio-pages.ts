@@ -1,9 +1,9 @@
 import {PortfolioPage} from "../interfaces/portfolio-page.interface";
-import {PortfolioCategory} from "../enums/portfolio-category.enum";
+import {PortfolioCategorySlugEnum} from "../enums/portfolio-category-slug.enum";
 
 export const PORTFOLIO_PAGES: PortfolioPage[] = [
-  { slug: PortfolioCategory.InteriorPainting, title: 'Роспись интерьера' },
-  { slug: PortfolioCategory.InteriorArt, title: 'Интерьерная картина' },
-  { slug: PortfolioCategory.Panels, title: 'Абстрактное панно' },
-  { slug: PortfolioCategory.Painting, title: 'Живопись' },
+  { slug: PortfolioCategorySlugEnum.InteriorPainting, title: 'Роспись интерьера' },
+  { slug: PortfolioCategorySlugEnum.InteriorArt, title: 'Интерьерная картина' },
+  { slug: PortfolioCategorySlugEnum.Panels, title: 'Абстрактное панно' },
+  { slug: PortfolioCategorySlugEnum.Painting, title: 'Живопись' },
 ];
