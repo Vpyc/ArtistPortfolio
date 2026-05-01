@@ -1,7 +1,9 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {HeroSectionComponent} from "./components/hero-section/hero-section.component";
+import {ChangeDetectionStrategy, Component, inject, Signal} from '@angular/core';
 import {WorkSectionComponent} from "./components/work-section/work-section.component";
 import {LinkButtonSectionComponent} from "../../shared/components/link-button-section/link-button-section.component";
+import {HeroSectionComponent} from "../../shared/components/hero-section/hero-section.component";
+import {WorkService} from "../../shared/services/works.service";
+import {Work} from "../../shared/interfaces/work.interface";
 
 @Component({
   selector: 'app-home',
@@ -9,11 +11,15 @@ import {LinkButtonSectionComponent} from "../../shared/components/link-button-se
   imports: [
     HeroSectionComponent,
     WorkSectionComponent,
-    LinkButtonSectionComponent
+    LinkButtonSectionComponent,
+    HeroSectionComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
+  private readonly workService: WorkService = inject(WorkService);
+
+  protected readonly hero: Signal<Work> = this.workService.hero;
 }

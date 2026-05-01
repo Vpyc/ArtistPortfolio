@@ -1,5 +1,9 @@
 @if (project()) {
-  <h1>{{ project().title }}</h1>
+  <app-hero-section [imageUrl]="project().hero.backgroundImage" [size]="HeroSizeEnum.Half">
+    <div hero-title class="hero__title">
+      <h1>{{ project().hero.title }}</h1>
+    </div>
+  </app-hero-section>
 
   @for (section of project().sections; track $index) {
 

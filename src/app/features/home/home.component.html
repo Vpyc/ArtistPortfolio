@@ -1,3 +1,17 @@
-<app-hero-section />
+<app-hero-section [imageUrl]="hero().imageUrl">
+  <div hero-title class="hero__title">
+    <h1>ТЕРЕЩЕНКО</h1>
+    <h1>ЮЛИЯ</h1>
+  </div>
+
+  <p hero-subtitle class="hero__subtitle">
+    Художник
+  </p>
+
+  <div hero-actions class="hero__actions">
+    <button class="btn btn-primary">Портфолио</button>
+    <button class="btn btn-outline">Заказать</button>
+  </div>
+</app-hero-section>
 <app-work-section />
 <app-link-button-section />

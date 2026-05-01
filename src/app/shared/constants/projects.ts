@@ -1,12 +1,13 @@
 import {Project} from "../interfaces/project.interface";
 import {SectionTypeEnum} from "../enums/section-type.enum";
 import {GalleryLayoutEnum} from "../enums/gallery-layout.enum";
-import {PortfolioCategorySlugEnum} from "../enums/portfolio-category-slug.enum";
 
 export const PROJECTS: Record<string, Project> = {
   'interior-painting': {
-    slug: PortfolioCategorySlugEnum.InteriorPainting,
-    title: 'Роспись интерьера',
+    hero: {
+      title: 'Интерьерная роспись',
+      backgroundImage: 'assets/interier.png'
+    },
     sections: [
       {
         type: SectionTypeEnum.Image,
@@ -29,8 +30,10 @@ export const PROJECTS: Record<string, Project> = {
   },
 
   'interior-art': {
-    slug: PortfolioCategorySlugEnum.InteriorArt,
-    title: 'Интерьерная картина',
+    hero: {
+      title: 'Интерьерная картина',
+      backgroundImage: 'assets/paint.png'
+    },
     sections: [
       {
         type: SectionTypeEnum.Image,
@@ -41,8 +44,10 @@ export const PROJECTS: Record<string, Project> = {
   },
 
   'panels': {
-    slug: PortfolioCategorySlugEnum.Panels,
-    title: 'Абстрактное панно',
+    hero: {
+      title: 'Абстрактное панно',
+      backgroundImage: 'assets/panno.png'
+    },
     sections: [
       {
         type: SectionTypeEnum.Image,
@@ -53,8 +58,10 @@ export const PROJECTS: Record<string, Project> = {
   },
 
   'painting': {
-    slug: PortfolioCategorySlugEnum.Painting,
-    title: 'Живопись',
+    hero: {
+      title: 'Живопись',
+      backgroundImage: 'assets/live-paint.png'
+    },
     sections: [
       {
         type: SectionTypeEnum.Image,

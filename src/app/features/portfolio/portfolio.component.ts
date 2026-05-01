@@ -8,6 +8,8 @@ import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
 import {ImageSectionComponent} from "../../shared/components/image-section/image-section.component";
 import {GallerySectionComponent} from "../../shared/components/gallery-section/gallery-section.component";
 import {TextSectionComponent} from "../../shared/components/text-section/text-section.component";
+import {HeroSectionComponent} from "../../shared/components/hero-section/hero-section.component";
+import {HeroSizeEnum} from "../../shared/enums/hero-size.enum";
 
 @Component({
   selector: 'app-portfolio',
@@ -15,7 +17,8 @@ import {TextSectionComponent} from "../../shared/components/text-section/text-se
   imports: [
     ImageSectionComponent,
     GallerySectionComponent,
-    TextSectionComponent
+    TextSectionComponent,
+    HeroSectionComponent
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
@@ -37,4 +40,5 @@ export class PortfolioComponent {
 
   project = computed(() => PROJECTS[this.category()]);
   protected readonly SectionTypeEnum = SectionTypeEnum;
+  protected readonly HeroSizeEnum = HeroSizeEnum;
 }
