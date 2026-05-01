@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, input, InputSignal} from '@angular/core';
+import {GallerySection} from "../../interfaces/section.interface";
 
 @Component({
   selector: 'app-gallery-section',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './gallery-section.component.scss'
 })
 export class GallerySectionComponent {
-
+  public section: InputSignal<GallerySection> = input.required<GallerySection>();
 }

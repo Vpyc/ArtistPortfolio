@@ -1,6 +1,5 @@
 import {Component, input, InputSignal} from '@angular/core';
 import {ImageSection} from "../../interfaces/section.interface";
-import {SectionTypeEnum} from "../../enums/section-type.enum";
 import {NgOptimizedImage} from "@angular/common";
 
 @Component({
@@ -13,8 +12,5 @@ import {NgOptimizedImage} from "@angular/common";
   styleUrl: './image-section.component.scss'
 })
 export class ImageSectionComponent {
-  public section: InputSignal<ImageSection> = input<ImageSection>({
-    type: SectionTypeEnum.Image,
-    image: 'assets/main.jpg'
-  });
+  public section: InputSignal<ImageSection> = input.required<ImageSection>();
 }

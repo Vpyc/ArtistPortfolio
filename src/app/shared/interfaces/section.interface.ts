@@ -14,6 +14,18 @@ export interface GallerySection {
   images: string[];
 }
 
+export interface SplitSection {
+  type: SectionTypeEnum.Split;
+  image: string;
+  title: string;
+  description?: string;
+
+  layout?: {
+    imageWidthMax: 70;
+    direction: "image-right";
+  }
+}
+
 export interface TextSection {
   type: SectionTypeEnum.Text;
   text: string;

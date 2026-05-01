@@ -1,4 +1,4 @@
-import {GallerySection, ImageSection, TextSection} from "../interfaces/section.interface";
+import {GallerySection, ImageSection, SplitSection, TextSection} from "../interfaces/section.interface";
 
-export type Section = ImageSection | GallerySection | TextSection
+export type Section = ImageSection | GallerySection | TextSection | SplitSection
 

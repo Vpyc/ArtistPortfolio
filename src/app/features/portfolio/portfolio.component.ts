@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, inject, Signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, Type} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {toSignal} from "@angular/core/rxjs-interop";
 import {map} from "rxjs";
@@ -10,15 +10,16 @@ import {GallerySectionComponent} from "../../shared/components/gallery-section/g
 import {TextSectionComponent} from "../../shared/components/text-section/text-section.component";
 import {HeroSectionComponent} from "../../shared/components/hero-section/hero-section.component";
 import {HeroSizeEnum} from "../../shared/enums/hero-size.enum";
+import {SplitSectionComponent} from "../../shared/components/split-section/split-section.component";
+import {Section} from "../../shared/models/sections.type";
+import {NgComponentOutlet} from "@angular/common";
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [
-    ImageSectionComponent,
-    GallerySectionComponent,
-    TextSectionComponent,
-    HeroSectionComponent
+    HeroSectionComponent,
+    NgComponentOutlet
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
@@ -26,6 +27,13 @@ import {HeroSizeEnum} from "../../shared/enums/hero-size.enum";
 })
 export class PortfolioComponent {
   private route = inject(ActivatedRoute);
+
+  private sectionComponents: Record<SectionTypeEnum, Type<any>> = {
+    [SectionTypeEnum.Image]: ImageSectionComponent,
+    [SectionTypeEnum.Gallery]: GallerySectionComponent,
+    [SectionTypeEnum.Text]: TextSectionComponent,
+    [SectionTypeEnum.Split]: SplitSectionComponent,
+  };
 
   private category = toSignal(
     this.route.paramMap.pipe(
@@ -38,7 +46,10 @@ export class PortfolioComponent {
     { initialValue: PortfolioCategorySlugEnum.InteriorPainting }
   );
 
+  protected getComponent(section: Section) {
+    return this.sectionComponents[section.type];
+  }
+
   project = computed(() => PROJECTS[this.category()]);
-  protected readonly SectionTypeEnum = SectionTypeEnum;
   protected readonly HeroSizeEnum = HeroSizeEnum;
 }

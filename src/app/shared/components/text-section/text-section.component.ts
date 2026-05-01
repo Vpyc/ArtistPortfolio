@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, input, InputSignal} from '@angular/core';
+import {TextSection} from "../../interfaces/section.interface";
 
 @Component({
   selector: 'app-text-section',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './text-section.component.scss'
 })
 export class TextSectionComponent {
-
+  public section: InputSignal<TextSection> = input.required<TextSection>();
 }
