@@ -1,0 +1,54 @@
+.header {
+  background: var(--primary);
+  color: white;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+}
+
+.nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 200px;
+
+  li {
+    list-style: none;
+    margin-bottom: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<header class="header">
+  <div class="header__container">
+
+    <div class="header__logo">
+      <a routerLink="/">LOGO</a>
+    </div>
+
+    <nav class="header__nav">
+
+      <a routerLink="/" class="nav-link">Главная</a>
+
+      <div
+        class="nav-item"
+        (mouseenter)="openMenu()"
+        (mouseleave)="closeMenu()"
+      >
+        <span class="nav-link">Портфолио</span>
+
+        <ul class="dropdown" *ngIf="isOpen">
+          <li *ngFor="let category of categories">
+            <a [routerLink]="['/works', category.slug]">
+              {{ category.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <a routerLink="/about" class="nav-link">Обо мне</a>
+      <a routerLink="/contacts" class="nav-link">Контакты</a>
+
+    </nav>
+
+  </div>
+</header>
