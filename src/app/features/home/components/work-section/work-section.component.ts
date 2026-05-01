@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject, Signal} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
-import {WorkService} from "../../../../shared/serviсes/works.service";
+import {WorkService} from "../../../../shared/services/works.service";
 import {Work} from "../../../../shared/interfaces/work.interface";
 import {RouterLink} from "@angular/router";
 
