@@ -1,6 +1,6 @@
 <section class="works">
 
-  <div *ngFor="let work of works; let i = index"
+  <div *ngFor="let work of works(); let i = index"
        class="work"
        [class.odd]="i % 2 === 1">
 

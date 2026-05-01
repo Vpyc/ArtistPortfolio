@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -8,7 +8,8 @@ import {RouterLink} from "@angular/router";
     RouterLink
   ],
   templateUrl: './link-button-section.component.html',
-  styleUrl: './link-button-section.component.scss'
+  styleUrl: './link-button-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LinkButtonSectionComponent {
 

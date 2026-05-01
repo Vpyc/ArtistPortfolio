@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {NgForOf, NgIf} from "@angular/common";
 
@@ -8,6 +8,7 @@ import {NgForOf, NgIf} from "@angular/common";
   imports: [RouterLink, NgForOf, NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   protected isOpen: boolean = false;
