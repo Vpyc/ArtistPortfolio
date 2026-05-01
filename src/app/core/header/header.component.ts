@@ -10,19 +10,19 @@ import {NgForOf, NgIf} from "@angular/common";
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  isOpen = false;
+  protected isOpen: boolean = false;
 
-  categories = [
+  protected categories = [
     { name: 'Интерьерная живопись', slug: 'interior-painting' },
     { name: 'Портреты', slug: 'portraits' },
     { name: 'Иллюстрации', slug: 'illustrations' },
   ];
 
-  openMenu() {
+  protected openMenu(): void {
     this.isOpen = true;
   }
 
-  closeMenu() {
+  protected closeMenu(): void {
     this.isOpen = false;
   }
 }
