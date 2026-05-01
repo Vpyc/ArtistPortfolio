@@ -1,4 +1,6 @@
 export enum PortfolioCategory {
   InteriorPainting = 'interior-painting',
-  Graphics = 'graphics',
+  InteriorArt = 'interior-art',
+  Panels = 'panels',
+  Painting = 'painting',
 }
