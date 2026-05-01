@@ -9,9 +9,6 @@ import {LinkButtonSectionComponent} from "../../shared/components/link-button-se
   imports: [
     HeroSectionComponent,
     WorkSectionComponent,
-    LinkButtonSectionComponent,
-    HeroSectionComponent,
-    WorkSectionComponent,
     LinkButtonSectionComponent
   ],
   templateUrl: './home.component.html',

@@ -1,6 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {NgForOf, NgIf} from "@angular/common";
+import {PORTFOLIO_PAGES} from "../../../shared/constants/portfolio-pages";
+import {PortfolioPage} from "../../../shared/interfaces/portfolio-page.interface";
 
 @Component({
   selector: 'app-header',
@@ -13,11 +15,7 @@ import {NgForOf, NgIf} from "@angular/common";
 export class HeaderComponent {
   protected isOpen: boolean = false;
 
-  protected categories = [
-    { name: 'Интерьерная живопись', slug: 'interior-painting' },
-    { name: 'Портреты', slug: 'portraits' },
-    { name: 'Иллюстрации', slug: 'illustrations' },
-  ];
+  protected categories: PortfolioPage[] = PORTFOLIO_PAGES;
 
   protected openMenu(): void {
     this.isOpen = true;

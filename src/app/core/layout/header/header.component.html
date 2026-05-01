@@ -18,8 +18,8 @@
 
         <ul class="dropdown" *ngIf="isOpen">
           <li *ngFor="let category of categories">
-            <a [routerLink]="['/works', category.slug]">
-              {{ category.name }}
+            <a [routerLink]="[category.route]">
+              {{ category.title }}
             </a>
           </li>
         </ul>
