@@ -9,19 +9,17 @@
 
       <a routerLink="/" class="nav-link">Главная</a>
 
-      <div
-        class="nav-item"
-        (mouseenter)="openMenu()"
-        (mouseleave)="closeMenu()"
-      >
-        <span class="nav-link">Портфолио</span>
+      <div class="nav-item">
+        <span class="nav-link">Портфолио ▾</span>
 
-        <ul class="dropdown" *ngIf="isOpen">
-          <li *ngFor="let category of categories">
-            <a [routerLink]="[category.route]">
-              {{ category.title }}
-            </a>
-          </li>
+        <ul class="dropdown">
+          @for (category of categories; track category.slug) {
+            <li>
+              <a [routerLink]="['/portfolio', category.slug]">
+                {{ category.title }}
+              </a>
+            </li>
+          }
         </ul>
       </div>
 

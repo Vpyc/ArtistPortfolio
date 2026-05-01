@@ -22,10 +22,18 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  padding: 8px 0;
 }
 
 .nav-item {
   position: relative;
+
+  &:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }
 
 .dropdown {
@@ -38,10 +46,30 @@
   border-radius: 8px;
   min-width: 200px;
   z-index: 100;
+  list-style: none;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+  }
 
   li {
     list-style: none;
     margin-bottom: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
   }
 
   a {
