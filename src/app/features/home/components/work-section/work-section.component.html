@@ -1,7 +1,7 @@
 <section class="works">
 
   @for (work of works(); track work.id; let i = $index) {
-    <div class="work" [class.odd]="i % 2 === 1">
+    <div class="work" [class.even]="i % 2 === 0">
 
       <div class="work__media">
         <h2>{{ work.category }}</h2>

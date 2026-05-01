@@ -1,10 +1,13 @@
 import {Component, input, InputSignal} from '@angular/core';
 import {SplitSection} from "../../interfaces/section.interface";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-split-section',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './split-section.component.html',
   styleUrl: './split-section.component.scss'
 })

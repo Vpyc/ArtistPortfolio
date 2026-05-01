@@ -1,14 +1,22 @@
-@if (project()) {
-  <app-hero-section [imageUrl]="project().hero.backgroundImage" [size]="HeroSizeEnum.Half">
+@if (categoryPage()) {
+  <app-hero-section [imageUrl]="categoryPage().hero.backgroundImage" [size]="HeroSizeEnum.Half">
     <div hero-title class="hero__title">
-      <h1>{{ project().hero.title }}</h1>
+      <h1>{{ categoryPage().hero.title }}</h1>
     </div>
   </app-hero-section>
 
-  @for (section of project().sections; track $index) {
-    <ng-container
-      *ngComponentOutlet="getComponent(section);
-                        inputs: { section: section }">
-    </ng-container>
+  @for (project of categoryPage().projects; track project) {
+
+    <section class="project"
+             [style.background-color]="'var(' + project.backgroundColor + ')'"
+             [style.color]="'var(' + project.textColor + ')'">
+
+    @for (section of project.sections; track section) {
+      <ng-container
+        *ngComponentOutlet="getComponent(section); inputs: { section: section }">
+      </ng-container>
+    }
+
+    </section>
   }
 }
