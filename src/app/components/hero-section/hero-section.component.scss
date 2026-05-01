@@ -1,0 +1,57 @@
+.hero {
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  position: relative;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero__title {
+  font-family: var(--font-serif), sans-serif;
+  font-size: 64px;
+  color: var(--background);
+  letter-spacing: 2px;
+}
+
+.hero__subtitle {
+  font-size: 24px;
+  color: var(--background);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--background);
+  color: var(--background);
+}

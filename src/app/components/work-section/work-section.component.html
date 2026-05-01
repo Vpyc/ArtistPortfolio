@@ -1,0 +1,25 @@
+<section class="works">
+
+  <div *ngFor="let work of works; let i = index"
+       class="work"
+       [class.odd]="i % 2 === 1">
+
+    <div class="work__media">
+      <h2>{{ work.category }}</h2>
+
+      <div class="image">
+        <img ngSrc="{{work.imageUrl}}" [alt]="work.title" fill/>
+      </div>
+    </div>
+
+    <div class="work__info">
+      <p>{{ work.description }}</p>
+
+      <button class="btn">
+        Подробнее
+      </button>
+    </div>
+
+  </div>
+
+</section>
