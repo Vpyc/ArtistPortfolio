@@ -1,0 +1,19 @@
+<div class="timeline-container">
+  @for (item of timelineItems(); track $index) {
+    <div class="timeline-item">
+      <div class="timeline-date">
+        {{ item.date | date:'yyyy' }}
+      </div>
+
+      <div class="timeline-content">
+        <div class="content-text">
+          <h3 class="content-title">{{ item.title }}</h3>
+          <p class="content-description">{{ item.description }}</p>
+        </div>
+        <div class="content-image-wrapper">
+          <img ngSrc="{{item.image}}" [alt]="item.title" class="content-image" fill/>
+        </div>
+      </div>
+    </div>
+  }
+</div>

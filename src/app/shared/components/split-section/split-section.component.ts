@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, input, InputSignal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input, InputSignal, Signal} from '@angular/core';
 import {SplitSection} from "../../interfaces/section.interface";
 import {NgOptimizedImage} from "@angular/common";
 
@@ -14,4 +14,8 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class SplitSectionComponent {
   public section: InputSignal<SplitSection> = input.required<SplitSection>();
+
+  protected readonly splitLine: Signal<boolean> = computed(() => {
+    return this.section().layout?.splitLine ?? false
+  })
 }

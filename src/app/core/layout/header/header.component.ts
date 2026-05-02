@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterLink } from '@angular/router';
-import {PORTFOLIO_PAGES} from "../../../shared/constants/portfolio-pages";
-import {PortfolioPage} from "../../../shared/interfaces/portfolio-page.interface";
+import {PORTFOLIO_CATEGORIES} from "../../../shared/constants/portfolio-categories";
+import {PortfolioCategory} from "../../../shared/interfaces/portfolio-category.interface";
 
 @Component({
   selector: 'app-header',
@@ -12,5 +12,5 @@ import {PortfolioPage} from "../../../shared/interfaces/portfolio-page.interface
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  protected categories: PortfolioPage[] = PORTFOLIO_PAGES;
+  protected categories: PortfolioCategory[] = PORTFOLIO_CATEGORIES;
 }

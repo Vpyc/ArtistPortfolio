@@ -3,7 +3,9 @@
     <img [ngSrc]="section().image" alt="" fill/>
   </div>
 
-  <div class="split__line"></div>
+  @if (splitLine()) {
+    <div class="split__line"></div>
+  }
 
   <div class="split__content">
     <h2>{{ section().title }}</h2>

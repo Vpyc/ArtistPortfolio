@@ -1,13 +1,13 @@
-  import {CategoryPage} from "../interfaces/category-page.interface";
+  import {Page} from "../interfaces/page.interface";
   import {SectionTypeEnum} from "../enums/section-type.enum";
 
-  export const CATEGORY_PAGES: Record<string, CategoryPage> = {
+  export const CATEGORY_PAGES: Record<string, Page> = {
     'interior-painting': {
       hero: {
         title: 'Интерьерная роспись',
         backgroundImage: 'assets/interier.png'
       },
-      projects: [
+      groups: [
         {
           backgroundColor: '--background',
           textColor: '--primary',
@@ -16,7 +16,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             },
             {
               type: SectionTypeEnum.Gallery,
@@ -45,7 +48,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             },
             {
               type: SectionTypeEnum.Gallery,
@@ -74,7 +80,7 @@
         title: 'Интерьерная картина',
         backgroundImage: 'assets/paint.png'
       },
-      projects: [
+      groups: [
         {
           backgroundColor: '--card',
           textColor: '--background',
@@ -83,7 +89,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             }
           ]
         }
@@ -95,7 +104,7 @@
         title: 'Абстрактное панно',
         backgroundImage: 'assets/panno.png'
       },
-      projects: [
+      groups: [
         {
           backgroundColor: '--card',
           textColor: '--background',
@@ -104,7 +113,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             }
           ]
         }
@@ -116,7 +128,7 @@
         title: 'Живопись',
         backgroundImage: 'assets/live-paint.png'
       },
-      projects: [
+      groups: [
         {
           backgroundColor: '--card',
           textColor: '--background',
@@ -125,7 +137,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             }
           ]
         }

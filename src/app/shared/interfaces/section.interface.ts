@@ -1,5 +1,6 @@
 import {SectionTypeEnum} from "../enums/section-type.enum";
 import {GalleryLayoutEnum} from "../enums/gallery-layout.enum";
+import {TimelineItem} from "./timeline-items.interface";
 
 export interface ImageSection {
   type: SectionTypeEnum.Image;
@@ -24,12 +25,18 @@ export interface SplitSection {
   description?: string;
 
   layout?: {
-    imageWidthMax: 70;
-    direction: "image-right";
+    imageWidthMax?: number;
+    direction?: string;
+    splitLine?: boolean;
   }
 }
 
 export interface TextSection {
   type: SectionTypeEnum.Text;
   text: string;
+}
+
+export interface TimelineSection {
+  type: SectionTypeEnum.Timeline;
+  items: TimelineItem[];
 }
