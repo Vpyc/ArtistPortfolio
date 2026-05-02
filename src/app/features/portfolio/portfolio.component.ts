@@ -7,7 +7,7 @@ import {PortfolioCategorySlugEnum} from "../../shared/enums/portfolio-category-s
 import {HeroSectionComponent} from "../../shared/components/hero-section/hero-section.component";
 import {HeroSizeEnum} from "../../shared/enums/hero-size.enum";
 import {LinkButtonSectionComponent} from "../../shared/components/link-button-section/link-button-section.component";
-import {SectionRendererComponent} from "../../shared/components/section-rederer/section-renderer.component";
+import {PageRendererComponent} from "../../shared/components/page-renderer/page-renderer.component";
 
 @Component({
   selector: 'app-portfolio',
@@ -15,7 +15,7 @@ import {SectionRendererComponent} from "../../shared/components/section-rederer/
   imports: [
     HeroSectionComponent,
     LinkButtonSectionComponent,
-    SectionRendererComponent
+    PageRendererComponent
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',

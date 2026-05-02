@@ -1,9 +1,0 @@
-@for (section of sections(); track $index) {
-  <div class="section">
-    <ng-container
-      *ngComponentOutlet="getComponent(section);
-                        inputs: { section: section }">
-    </ng-container>
-  </div>
-
-}

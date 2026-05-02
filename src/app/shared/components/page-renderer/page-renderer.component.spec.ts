@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SectionRedererComponent } from './section-rederer.component';
+import { PageRendererComponent } from './page-renderer.component';
 
-describe('SectionRedererComponent', () => {
-  let component: SectionRedererComponent;
-  let fixture: ComponentFixture<SectionRedererComponent>;
+describe('PageRendererComponent', () => {
+  let component: PageRendererComponent;
+  let fixture: ComponentFixture<PageRendererComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SectionRedererComponent]
+      imports: [PageRendererComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SectionRedererComponent);
+    fixture = TestBed.createComponent(PageRendererComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,20 +5,22 @@ import {ImageSectionComponent} from "../image-section/image-section.component";
 import {GallerySectionComponent} from "../gallery-section/gallery-section.component";
 import {TextSectionComponent} from "../text-section/text-section.component";
 import {SplitSectionComponent} from "../split-section/split-section.component";
-import {NgComponentOutlet} from "@angular/common";
+import {NgComponentOutlet, NgStyle} from "@angular/common";
+import {Page} from "../../interfaces/page.interface";
 
 @Component({
-  selector: 'app-section-renderer',
+  selector: 'app-page-renderer',
   standalone: true,
   imports: [
-    NgComponentOutlet
+    NgComponentOutlet,
+    NgStyle
   ],
-  templateUrl: './section-renderer.component.html',
-  styleUrl: './section-renderer.component.scss',
+  templateUrl: './page-renderer.component.html',
+  styleUrl: './page-renderer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SectionRendererComponent {
-  sections: InputSignal<Section[]> = input.required<Section[]>();
+export class PageRendererComponent {
+  public page: InputSignal<Page> = input.required<Page>();
 
   private sectionComponents: Record<SectionTypeEnum, Type<unknown>> = {
     [SectionTypeEnum.Image]: ImageSectionComponent,

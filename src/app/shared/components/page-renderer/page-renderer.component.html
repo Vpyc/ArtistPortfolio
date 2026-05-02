@@ -1,0 +1,21 @@
+@for (project of page().groups; track $index) {
+
+  <section class="project"
+           [ngStyle]="{
+           'background-color': project.backgroundColor ? 'var(' + project.backgroundColor + ')' : null,
+           'color': project.textColor ? 'var(' + project.textColor + ')' : null
+         }">
+
+    @for (section of project.sections; track $index) {
+      <div class="section">
+        <ng-container
+          *ngComponentOutlet="getComponent(section);
+                        inputs: { section: section }">
+        </ng-container>
+      </div>
+    }
+
+  </section>
+}
+
+

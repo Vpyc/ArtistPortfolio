@@ -5,15 +5,7 @@
     </div>
   </app-hero-section>
 
-  @for (project of categoryPage().groups; track $index) {
-
-    <section class="project"
-             [style.background-color]="'var(' + project.backgroundColor + ')'"
-             [style.color]="'var(' + project.textColor + ')'">
-
-      <app-section-renderer [sections]="project.sections" />
-    </section>
-  }
+  <app-page-renderer [page]="categoryPage()"></app-page-renderer>
 
   <app-link-button-section/>
 }
