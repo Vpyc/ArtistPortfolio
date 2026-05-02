@@ -1,0 +1,16 @@
+.gallery {
+  display: grid;
+  padding: 20px;
+}
+
+.gallery__item {
+  position: relative;
+  width: 100%;
+
+  aspect-ratio: 3/2;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}

@@ -17,9 +17,55 @@
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
               description: 'Победа наконец то может быть пожалуйста????'
-          }
+            },
+            {
+              type: SectionTypeEnum.Gallery,
+              images: [
+                'assets/interier.png',
+                'assets/live-paint.png',
+                'assets/panno.png',
+                'assets/paint.png',
+                'assets/interier.png',
+                'assets/live-paint.png',
+                'assets/panno.png',
+                'assets/paint.png',
+              ],
+              layout: {
+                columns: 3,
+                gap: 36,
+              }
+            }
           ]
-        }
+        },
+        {
+          backgroundColor: '--primary-foreground',
+          textColor: '--primary',
+          sections: [
+            {
+              type: SectionTypeEnum.Split,
+              image: 'assets/interier.png',
+              title: 'Аквапарк "Мореон"',
+              description: 'Победа наконец то может быть пожалуйста????'
+            },
+            {
+              type: SectionTypeEnum.Gallery,
+              images: [
+                'assets/interier.png',
+                'assets/live-paint.png',
+                'assets/panno.png',
+                'assets/paint.png',
+                'assets/interier.png',
+                'assets/live-paint.png',
+                'assets/panno.png',
+                'assets/paint.png',
+              ],
+              layout: {
+                columns: 3,
+                gap: 36,
+              }
+            }
+          ]
+        },
       ],
     },
 

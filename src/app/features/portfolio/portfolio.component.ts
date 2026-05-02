@@ -13,13 +13,15 @@ import {HeroSizeEnum} from "../../shared/enums/hero-size.enum";
 import {SplitSectionComponent} from "../../shared/components/split-section/split-section.component";
 import {Section} from "../../shared/models/sections.type";
 import {NgComponentOutlet} from "@angular/common";
+import {LinkButtonSectionComponent} from "../../shared/components/link-button-section/link-button-section.component";
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [
     HeroSectionComponent,
-    NgComponentOutlet
+    NgComponentOutlet,
+    LinkButtonSectionComponent
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
