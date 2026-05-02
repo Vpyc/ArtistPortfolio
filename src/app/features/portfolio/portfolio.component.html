@@ -5,18 +5,13 @@
     </div>
   </app-hero-section>
 
-  @for (project of categoryPage().projects; track project) {
+  @for (project of categoryPage().projects; track $index) {
 
     <section class="project"
              [style.background-color]="'var(' + project.backgroundColor + ')'"
              [style.color]="'var(' + project.textColor + ')'">
 
-    @for (section of project.sections; track section) {
-      <ng-container
-        *ngComponentOutlet="getComponent(section); inputs: { section: section }">
-      </ng-container>
-    }
-
+      <app-section-renderer [sections]="project.sections" />
     </section>
   }
 
