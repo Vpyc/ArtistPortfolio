@@ -4,25 +4,30 @@
     font-size: 64px;
     color: var(--background);
     letter-spacing: 2px;
+
+    h1 {
+      margin: 0
+    }
   }
 
   &__subtitle {
-    font-size: 24px;
+    font-size: 36px;
+    margin: 0;
     color: var(--background);
   }
 
   &__actions {
     display: flex;
+    margin-top: 10px;
     gap: 16px;
     justify-content: center;
   }
 }
 
-/* buttons */
 .btn {
-  padding: 12px 24px;
+  padding: 16px 36px;
   border-radius: var(--radius);
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.2s;
 }
