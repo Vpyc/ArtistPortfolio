@@ -1,1 +1,11 @@
-<p>gallery-section works!</p>
+<section class="gallery"
+         [style.gap.px]="gap()"
+         [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">
+
+  @for (image of section().images; track $index) {
+    <div class="gallery__item">
+      <img [ngSrc]="image" alt="" fill />
+    </div>
+  }
+
+</section>

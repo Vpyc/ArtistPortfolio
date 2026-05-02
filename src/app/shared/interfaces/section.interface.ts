@@ -10,8 +10,11 @@ export interface ImageSection {
 
 export interface GallerySection {
   type: SectionTypeEnum.Gallery;
-  layout: GalleryLayoutEnum;
   images: string[];
+  layout?: {
+    columns?: number;
+    gap?: number;
+  };
 }
 
 export interface SplitSection {
