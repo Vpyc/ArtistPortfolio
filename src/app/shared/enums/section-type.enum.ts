@@ -3,4 +3,5 @@ export enum SectionTypeEnum {
   Gallery = 'gallery',
   Split = 'split',
   Text = 'text',
+  Timeline = 'timeline'
 }

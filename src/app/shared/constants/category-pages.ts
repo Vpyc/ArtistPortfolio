@@ -16,7 +16,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             },
             {
               type: SectionTypeEnum.Gallery,
@@ -45,7 +48,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             },
             {
               type: SectionTypeEnum.Gallery,
@@ -83,7 +89,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             }
           ]
         }
@@ -104,7 +113,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             }
           ]
         }
@@ -125,7 +137,10 @@
               type: SectionTypeEnum.Split,
               image: 'assets/interier.png',
               title: 'Аквапарк "Мореон"',
-              description: 'Победа наконец то может быть пожалуйста????'
+              description: 'Победа наконец то может быть пожалуйста????',
+              layout: {
+                splitLine: true,
+              }
             }
           ]
         }

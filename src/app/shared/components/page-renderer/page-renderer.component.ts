@@ -7,6 +7,7 @@ import {TextSectionComponent} from "../text-section/text-section.component";
 import {SplitSectionComponent} from "../split-section/split-section.component";
 import {NgComponentOutlet, NgStyle} from "@angular/common";
 import {Page} from "../../interfaces/page.interface";
+import {TimelineSectionComponent} from "../timeline-section/timeline-section.component";
 
 @Component({
   selector: 'app-page-renderer',
@@ -27,6 +28,7 @@ export class PageRendererComponent {
     [SectionTypeEnum.Gallery]: GallerySectionComponent,
     [SectionTypeEnum.Text]: TextSectionComponent,
     [SectionTypeEnum.Split]: SplitSectionComponent,
+    [SectionTypeEnum.Timeline]: TimelineSectionComponent,
   };
 
   protected getComponent(section: Section) {

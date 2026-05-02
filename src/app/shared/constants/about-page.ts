@@ -4,30 +4,44 @@ import {Page} from "../interfaces/page.interface";
 export const ABOUT_PAGE: Page = {
     groups: [
       {
+        textColor: '--primary',
         sections: [
           {
-            type: SectionTypeEnum.Split,
-            image: 'assets/interier.png',
-            title: 'Аквапарк "Мореон"',
-            description: 'Победа наконец то может быть пожалуйста????'
+            type: SectionTypeEnum.Text,
+            text: 'Обо мне',
           },
           {
-            type: SectionTypeEnum.Gallery,
-            images: [
-              'assets/interier.png',
-              'assets/live-paint.png',
-              'assets/panno.png',
-              'assets/paint.png',
-              'assets/interier.png',
-              'assets/live-paint.png',
-              'assets/panno.png',
-              'assets/paint.png',
-            ],
-            layout: {
-              columns: 3,
-              gap: 36,
-            }
-          }
+            type: SectionTypeEnum.Split,
+            image: 'assets/main.jpg',
+            title: 'Терещенко Юлия Юрьевна"',
+            description: 'Победа наконец то может быть пожалуйста????',
+          },
+        ]
+      },
+      {
+        textColor: '--foreground',
+        sections: [
+          {
+            type: SectionTypeEnum.Text,
+            text: 'Достижения',
+          },
+          {
+            type: SectionTypeEnum.Timeline,
+            items: [
+              {
+                date: new Date(2025, 0, 1),
+                title: 'Победа пожалуйста',
+                description: 'Возможная победа побед в победе',
+                image: 'assets/paint.png'
+              },
+              {
+                date: new Date(2025, 0, 1),
+                title: 'Победа пожалуйста 2',
+                description: 'Возможная победа побед в победе 2',
+                image: 'assets/interier.png'
+              },
+            ]
+          },
         ]
       }
     ]
