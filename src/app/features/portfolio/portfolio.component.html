@@ -1,11 +1,11 @@
 @if (categoryPage()) {
-  <app-hero-section [imageUrl]="categoryPage().hero.backgroundImage" [size]="HeroSizeEnum.Half">
+  <app-hero-section [imageUrl]="categoryPage().hero?.backgroundImage ?? ''" [size]="HeroSizeEnum.Half">
     <div hero-title class="hero__title">
-      <h1>{{ categoryPage().hero.title }}</h1>
+      <h1>{{ categoryPage().hero?.title }}</h1>
     </div>
   </app-hero-section>
 
-  @for (project of categoryPage().projects; track $index) {
+  @for (project of categoryPage().groups; track $index) {
 
     <section class="project"
              [style.background-color]="'var(' + project.backgroundColor + ')'"
