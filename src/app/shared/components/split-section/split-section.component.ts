@@ -1,4 +1,4 @@
-import {Component, input, InputSignal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, InputSignal} from '@angular/core';
 import {SplitSection} from "../../interfaces/section.interface";
 import {NgOptimizedImage} from "@angular/common";
 
@@ -9,7 +9,8 @@ import {NgOptimizedImage} from "@angular/common";
     NgOptimizedImage
   ],
   templateUrl: './split-section.component.html',
-  styleUrl: './split-section.component.scss'
+  styleUrl: './split-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SplitSectionComponent {
   public section: InputSignal<SplitSection> = input.required<SplitSection>();

@@ -1,4 +1,4 @@
-import {Component, computed, input, InputSignal, Signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input, InputSignal, Signal} from '@angular/core';
 import {GallerySection} from "../../interfaces/section.interface";
 import {NgOptimizedImage} from "@angular/common";
 
@@ -9,7 +9,8 @@ import {NgOptimizedImage} from "@angular/common";
     NgOptimizedImage
   ],
   templateUrl: './gallery-section.component.html',
-  styleUrl: './gallery-section.component.scss'
+  styleUrl: './gallery-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GallerySectionComponent {
   public section: InputSignal<GallerySection> = input.required<GallerySection>();
