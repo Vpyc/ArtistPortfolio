@@ -1,17 +1,6 @@
 .hero {
-  &__title {
-    font-family: var(--font-serif), sans-serif;
-    font-size: 64px;
-    color: var(--background);
-    letter-spacing: 2px;
-
-    h1 {
-      margin: 0
-    }
-  }
-
   &__subtitle {
-    font-size: 36px;
+    font-size: 46px;
     margin: 0;
     color: var(--background);
   }
@@ -22,14 +11,6 @@
     gap: 16px;
     justify-content: center;
   }
-}
-
-.btn {
-  padding: 16px 36px;
-  border-radius: var(--radius);
-  font-size: 20px;
-  cursor: pointer;
-  transition: 0.2s;
 }
 
 .btn-primary {

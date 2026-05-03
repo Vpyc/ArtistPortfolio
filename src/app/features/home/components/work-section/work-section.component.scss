@@ -1,22 +1,36 @@
 .works {
   display: flex;
   flex-direction: column;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 
 .work {
   display: flex;
   gap: 32px;
-  padding: 48px;
+  padding: 24px 48px 54px;
   align-items: stretch;
 
   &:nth-child(odd) {
     background: var(--primary);
     color: var(--background);
+
+    .btn {
+      background: var(--background);
+      color: var(--primary);
+    }
   }
 
   &:nth-child(even) {
     background: var(--background);
     color: var(--primary);
+
+    .btn {
+      background: var(--primary);
+      color: var(--background);
+    }
   }
 
   &.even {
@@ -28,14 +42,15 @@
   }
 
   &__media {
-    flex: 2;
+    flex: 4;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
     h2 {
       font-family: var(--font-serif), sans-serif;
-      font-size: 48px;
+      font-size: 5vw;
+      margin: 0 0 16px;
     }
   }
 
@@ -62,12 +77,7 @@
 }
 
 .btn {
-  padding: 12px 18px;
-  text-align: center;
-  border-radius: var(--radius);
-  border: 1px solid currentColor;
-  background: transparent;
-  cursor: pointer;
+  align-self: flex-start;
 
   &:hover {
     opacity: 0.85;

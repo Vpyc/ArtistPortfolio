@@ -1,10 +1,10 @@
-<section class="works">
+<section id="works" class="works">
 
   @for (work of works(); track work.id; let i = $index) {
     <div class="work" [class.even]="i % 2 === 0">
 
       <div class="work__media">
-        <h2>{{ work.category }}</h2>
+        <h2>{{ work.title }}</h2>
         <div class="image">
           <img [ngSrc]="work.imageUrl" [alt]="work.title" fill />
         </div>

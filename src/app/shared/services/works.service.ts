@@ -7,28 +7,28 @@ export class WorkService {
   private works: Signal<Work[]> = signal([
     {
       id: '1',
-      title: 'Бассенджи 1',
+      title: 'Роспись интерьера',
       category: PortfolioCategorySlugEnum.InteriorPainting,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/interier.png',
     },
     {
       id: '2',
-      title: 'Попугай 1',
+      title: 'Интерьерная картина',
       category: PortfolioCategorySlugEnum.InteriorArt,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/paint.png',
     },
     {
       id: '3',
-      title: 'Бассенджи 2',
+      title: 'Абстрактное панно',
       category: PortfolioCategorySlugEnum.Panels,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/panno.png',
     },
     {
       id: '4',
-      title: 'Лисичка',
+      title: 'Живопись',
       category: PortfolioCategorySlugEnum.Painting,
       description: 'Победа победа победа победа',
       imageUrl: 'assets/live-paint.png',

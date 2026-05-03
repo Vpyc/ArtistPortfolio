@@ -4,6 +4,7 @@ import {LinkButtonSectionComponent} from "../../shared/components/link-button-se
 import {HeroSectionComponent} from "../../shared/components/hero-section/hero-section.component";
 import {WorkService} from "../../shared/services/works.service";
 import {Work} from "../../shared/interfaces/work.interface";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ import {Work} from "../../shared/interfaces/work.interface";
     HeroSectionComponent,
     WorkSectionComponent,
     LinkButtonSectionComponent,
-    HeroSectionComponent
+    HeroSectionComponent,
+    RouterLink
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -22,4 +24,9 @@ export class HomeComponent {
   private readonly workService: WorkService = inject(WorkService);
 
   protected readonly hero: Signal<Work> = this.workService.hero;
+
+  scrollToWorks() {
+    const el = document.getElementById('works');
+    el?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
