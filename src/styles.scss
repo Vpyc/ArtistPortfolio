@@ -104,4 +104,34 @@ h3 {
   }
 }
 
+.reveal {
+  opacity: 0;
+  transform:
+    translateY(24px)
+    scale(1.02);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  will-change:
+    opacity,
+    transform;
+
+  &--visible {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
 

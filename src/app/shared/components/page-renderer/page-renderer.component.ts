@@ -8,13 +8,15 @@ import {SplitSectionComponent} from "../split-section/split-section.component";
 import {NgComponentOutlet, NgStyle} from "@angular/common";
 import {Page} from "../../interfaces/page.interface";
 import {TimelineSectionComponent} from "../timeline-section/timeline-section.component";
+import {RevealDirective} from "../../directives/reveal.directive";
 
 @Component({
   selector: 'app-page-renderer',
   standalone: true,
   imports: [
     NgComponentOutlet,
-    NgStyle
+    NgStyle,
+    RevealDirective
   ],
   templateUrl: './page-renderer.component.html',
   styleUrl: './page-renderer.component.scss',
