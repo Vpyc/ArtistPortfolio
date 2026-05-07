@@ -25,4 +25,23 @@
     flex: 1;
     justify-content: center;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    &__content {
+      order: 1;
+      justify-items: center;
+      align-self: center;
+    }
+
+    &__image {
+      order: 2;
+      min-height: 250px;
+    }
+
+    &__line {
+      display: none;
+    }
+  }
 }
