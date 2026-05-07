@@ -15,11 +15,6 @@ import {NgOptimizedImage} from "@angular/common";
 export class GallerySectionComponent {
   public section: InputSignal<GallerySection> = input.required<GallerySection>();
 
-  protected readonly columns: Signal<number> = computed(() => {
-      return this.section().layout?.columns ?? 3;
-    }
-  )
-
   protected readonly gap: Signal<number> = computed(() => {
       return this.section().layout?.gap ?? 3;
     }

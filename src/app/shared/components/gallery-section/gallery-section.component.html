@@ -1,10 +1,10 @@
 <section class="gallery"
-         [style.gap.px]="gap()"
-         [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">
+         [style.gap.px]="gap()">
 
   @for (image of section().images; track $index) {
-    <div class="gallery__item">
-      <img [ngSrc]="image" alt="" fill />
+    <div class="gallery__item"
+         [class.gallery__item--featured]="image.featured">
+      <img [ngSrc]="image.src" alt="" fill />
     </div>
   }
 

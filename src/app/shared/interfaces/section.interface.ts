@@ -1,6 +1,7 @@
 import {SectionTypeEnum} from "../enums/section-type.enum";
 import {GalleryLayoutEnum} from "../enums/gallery-layout.enum";
 import {TimelineItem} from "./timeline-items.interface";
+import {GalleryImage} from "./gallery-image.interface";
 
 export interface ImageSection {
   type: SectionTypeEnum.Image;
@@ -11,9 +12,8 @@ export interface ImageSection {
 
 export interface GallerySection {
   type: SectionTypeEnum.Gallery;
-  images: string[];
+  images: GalleryImage[];
   layout?: {
-    columns?: number;
     gap?: number;
   };
 }

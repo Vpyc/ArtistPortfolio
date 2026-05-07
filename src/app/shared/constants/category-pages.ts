@@ -24,17 +24,34 @@
             {
               type: SectionTypeEnum.Gallery,
               images: [
-                'assets/interier.png',
-                'assets/live-paint.png',
-                'assets/panno.png',
-                'assets/paint.png',
-                'assets/interier.png',
-                'assets/live-paint.png',
-                'assets/panno.png',
-                'assets/paint.png',
+                {
+                  src: 'assets/interier.png',
+                },
+                {
+                  src: 'assets/live-paint.png',
+                  featured: true
+                },
+                {
+                  src: 'assets/panno.png',
+                },
+                {
+                  src: 'assets/paint.png',
+                  featured: true
+                },
+                {
+                  src: 'assets/interier.png',
+                },
+                {
+                  src: 'assets/live-paint.png',
+                },
+                {
+                  src: 'assets/panno.png',
+                },
+                {
+                  src: 'assets/paint.png',
+                },
               ],
               layout: {
-                columns: 3,
                 gap: 36,
               }
             }
@@ -56,17 +73,36 @@
             {
               type: SectionTypeEnum.Gallery,
               images: [
-                'assets/interier.png',
-                'assets/live-paint.png',
-                'assets/panno.png',
-                'assets/paint.png',
-                'assets/interier.png',
-                'assets/live-paint.png',
-                'assets/panno.png',
-                'assets/paint.png',
+                {
+                  src: 'assets/interier.png',
+                  featured: true
+                },
+                {
+                  src: 'assets/live-paint.png',
+                },
+                {
+                  src: 'assets/panno.png',
+                },
+                {
+                  src: 'assets/paint.png',
+                  featured: true
+                },
+                {
+                  src: 'assets/interier.png',
+                },
+                {
+                  src: 'assets/live-paint.png',
+                  featured: true
+                },
+                {
+                  src: 'assets/panno.png',
+                },
+                {
+                  src: 'assets/paint.png',
+                  featured: true
+                },
               ],
               layout: {
-                columns: 3,
                 gap: 36,
               }
             }
