@@ -22,11 +22,8 @@ export const ABOUT_PAGE: Page = {
         textColor: '--foreground',
         sections: [
           {
-            type: SectionTypeEnum.Text,
-            text: 'Достижения',
-          },
-          {
             type: SectionTypeEnum.Timeline,
+            title: 'Достижения',
             items: [
               {
                 date: new Date(2025, 0, 1),

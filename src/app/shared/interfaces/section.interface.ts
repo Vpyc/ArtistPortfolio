@@ -38,5 +38,6 @@ export interface TextSection {
 
 export interface TimelineSection {
   type: SectionTypeEnum.Timeline;
+  title?: string;
   items: TimelineItem[];
 }
