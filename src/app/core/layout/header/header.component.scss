@@ -1,11 +1,13 @@
 .header {
   background: var(--primary);
   color: white;
+  position: relative;
 
   &__container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 16px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,9 +17,20 @@
     display: flex;
     gap: 24px;
     align-items: center;
+    z-index: 50;
+  }
+
+  &__burger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
 }
 
+/* LINKS */
 .nav-link {
   cursor: pointer;
   text-decoration: none;
@@ -25,14 +38,17 @@
   padding: 8px 0;
 }
 
+/* DESKTOP DROPDOWN */
 .nav-item {
   position: relative;
 
-  &:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
+  &:hover {
+    .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
   }
 }
 
@@ -40,18 +56,20 @@
   position: absolute;
   top: 100%;
   left: 0;
+
   background: white;
   color: black;
   padding: 10px;
   border-radius: 8px;
+
   min-width: 200px;
-  z-index: 100;
   list-style: none;
 
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
-  transition: all 0.2s ease-in-out;
+  transition: 0.2s ease;
+
   pointer-events: none;
 
   &::before {
@@ -64,11 +82,10 @@
   }
 
   li {
-    list-style: none;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 
-    &:not(:last-child) {
-      margin-bottom: 4px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -79,5 +96,85 @@
     &:hover {
       color: red;
     }
+  }
+}
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+.mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+
+  width: 80%;
+  height: 100vh;
+
+  background: var(--primary);
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  transition: right 0.3s ease;
+  z-index: 1000;
+
+  &--open {
+    right: 0;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+
+    &--nested {
+      padding-left: 16px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 13px;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 8px 0 6px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 900;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
   }
 }

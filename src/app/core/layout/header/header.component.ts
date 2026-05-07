@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {PORTFOLIO_CATEGORIES} from "../../../shared/constants/portfolio-categories";
 import {PortfolioCategory} from "../../../shared/interfaces/portfolio-category.interface";
@@ -13,4 +13,14 @@ import {PortfolioCategory} from "../../../shared/interfaces/portfolio-category.i
 })
 export class HeaderComponent {
   protected categories: PortfolioCategory[] = PORTFOLIO_CATEGORIES;
+
+  readonly isMenuOpen = signal(false);
+
+  toggleMenu(): void {
+    this.isMenuOpen.update(v => !v);
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen.set(false);
+  }
 }

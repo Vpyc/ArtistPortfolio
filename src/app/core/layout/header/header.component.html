@@ -1,12 +1,18 @@
 <header class="header">
   <div class="header__container">
 
+    <!-- LOGO -->
     <div class="header__logo">
-      <a routerLink="/">LOGO</a>
+      <a routerLink="/" (click)="closeMenu()">LOGO</a>
     </div>
 
-    <nav class="header__nav">
+    <!-- BURGER -->
+    <button class="header__burger" (click)="toggleMenu()">
+      ☰
+    </button>
 
+    <!-- DESKTOP NAV -->
+    <nav class="header__nav">
       <a routerLink="/" class="nav-link">Главная</a>
 
       <div class="nav-item">
@@ -25,8 +31,48 @@
 
       <a routerLink="/about" class="nav-link">Обо мне</a>
       <a routerLink="/contacts" class="nav-link">Контакты</a>
-
     </nav>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile" [class.mobile--open]="isMenuOpen()">
+
+    <a class="mobile__link" routerLink="/" (click)="closeMenu()">
+      Главная
+    </a>
+
+    <!-- PORTFOLIO SECTION -->
+    <div class="mobile__group">
+      <div class="mobile__title">
+        Портфолио
+      </div>
+
+      <div class="mobile__items">
+        @for (category of categories; track category.slug) {
+          <a
+            class="mobile__link mobile__link--nested"
+            [routerLink]="['/portfolio', category.slug]"
+            (click)="closeMenu()"
+          >
+            {{ category.title }}
+          </a>
+        }
+      </div>
+    </div>
+
+    <a class="mobile__link" routerLink="/about" (click)="closeMenu()">
+      Обо мне
+    </a>
+
+    <a class="mobile__link" routerLink="/contacts" (click)="closeMenu()">
+      Контакты
+    </a>
 
   </div>
+
+  @if (isMenuOpen()) {
+    <div class="overlay"
+         (click)="closeMenu()">
+    </div>
+  }
 </header>

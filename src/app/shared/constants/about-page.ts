@@ -13,7 +13,7 @@ export const ABOUT_PAGE: Page = {
           {
             type: SectionTypeEnum.Split,
             image: 'assets/main.jpg',
-            title: 'Терещенко Юлия Юрьевна"',
+            title: 'Терещенко Юлия Юрьевна',
             description: 'Победа наконец то может быть пожалуйста????',
           },
         ]
