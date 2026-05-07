@@ -1,17 +1,15 @@
 <header class="header">
   <div class="header__container">
 
-    <!-- LOGO -->
     <div class="header__logo">
       <a routerLink="/" (click)="closeMenu()">LOGO</a>
     </div>
 
-    <!-- BURGER -->
     <button class="header__burger" (click)="toggleMenu()">
       ☰
     </button>
 
-    <!-- DESKTOP NAV -->
+    <!-- DESKTOP -->
     <nav class="header__nav">
       <a routerLink="/" class="nav-link">Главная</a>
 
@@ -34,23 +32,27 @@
     </nav>
   </div>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile" [class.mobile--open]="isMenuOpen()">
+  <!-- FULLSCREEN MOBILE MENU -->
+  <div class="menu" [class.menu--open]="isMenuOpen()">
 
-    <a class="mobile__link" routerLink="/" (click)="closeMenu()">
-      Главная
-    </a>
+    <button class="menu__close" (click)="closeMenu()">
+      ✕
+    </button>
 
-    <!-- PORTFOLIO SECTION -->
-    <div class="mobile__group">
-      <div class="mobile__title">
-        Портфолио
-      </div>
+    <div class="menu__inner">
 
-      <div class="mobile__items">
+      <a class="menu__link menu__link--large"
+         routerLink="/"
+         (click)="closeMenu()">
+        Главная
+      </a>
+
+      <div class="menu__section">
+        <div class="menu__label">Портфолио</div>
+
         @for (category of categories; track category.slug) {
           <a
-            class="mobile__link mobile__link--nested"
+            class="menu__link menu__link--large menu__link--nested"
             [routerLink]="['/portfolio', category.slug]"
             (click)="closeMenu()"
           >
@@ -58,21 +60,20 @@
           </a>
         }
       </div>
+
+      <a class="menu__link menu__link--large"
+         routerLink="/about"
+         (click)="closeMenu()">
+        Обо мне
+      </a>
+
+      <a class="menu__link menu__link--large"
+         routerLink="/contacts"
+         (click)="closeMenu()">
+        Контакты
+      </a>
+
     </div>
-
-    <a class="mobile__link" routerLink="/about" (click)="closeMenu()">
-      Обо мне
-    </a>
-
-    <a class="mobile__link" routerLink="/contacts" (click)="closeMenu()">
-      Контакты
-    </a>
 
   </div>
-
-  @if (isMenuOpen()) {
-    <div class="overlay"
-         (click)="closeMenu()">
-    </div>
-  }
 </header>

@@ -1,7 +1,6 @@
 .header {
   background: var(--primary);
   color: white;
-  position: relative;
 
   &__container {
     max-width: 1200px;
@@ -17,12 +16,11 @@
     display: flex;
     gap: 24px;
     align-items: center;
-    z-index: 50;
   }
 
   &__burger {
     display: none;
-    font-size: 28px;
+    font-size: 32px;
     background: none;
     border: none;
     color: white;
@@ -30,25 +28,23 @@
   }
 }
 
-/* LINKS */
+/* desktop links */
 .nav-link {
-  cursor: pointer;
   text-decoration: none;
   color: inherit;
   padding: 8px 0;
+  cursor: pointer;
 }
 
-/* DESKTOP DROPDOWN */
+/* dropdown desktop */
 .nav-item {
   position: relative;
 
-  &:hover {
-    .dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
+  &:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 }
 
@@ -63,31 +59,12 @@
   border-radius: 8px;
 
   min-width: 200px;
-  list-style: none;
 
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
   transition: 0.2s ease;
-
   pointer-events: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 0;
-    width: 100%;
-    height: 12px;
-  }
-
-  li {
-    margin-bottom: 4px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 
   a {
     text-decoration: none;
@@ -100,75 +77,96 @@
 }
 
 /* =========================
-   MOBILE MENU
+   FULLSCREEN MENU
    ========================= */
 
-.mobile {
+.menu {
   position: fixed;
-  top: 0;
-  right: -100%;
-
-  width: 80%;
-  height: 100vh;
-
+  inset: 0;
   background: var(--primary);
-  padding: 24px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  transition: right 0.3s ease;
   z-index: 1000;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: 0.3s ease;
+
   &--open {
-    right: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &__close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    color: white;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    z-index: 2000; /* выше меню */
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
   }
 
   &__link {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+
+    &--large {
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
 
     &--nested {
-      padding-left: 16px;
-      font-size: 16px;
+      font-size: 26px;
       opacity: 0.9;
     }
   }
 
-  &__group {
+  &__section {
     display: flex;
     flex-direction: column;
+    gap: 12px;
   }
 
-  &__title {
-    font-size: 13px;
+  &__label {
+    font-size: 14px;
     opacity: 0.5;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 8px 0 6px;
-  }
-
-  &__items {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
   }
 }
 
-/* overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 900;
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-
+/* burger */
 @media (max-width: 768px) {
   .header__nav {
     display: none;
