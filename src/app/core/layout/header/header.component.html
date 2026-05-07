@@ -1,15 +1,12 @@
-<header class="header">
+<header class="header"
+        [class.header--scrolled]="isScrolled()">
   <div class="header__container">
 
     <div class="header__logo">
       <a routerLink="/" (click)="closeMenu()">LOGO</a>
     </div>
 
-    <button class="header__burger" (click)="toggleMenu()">
-      ☰
-    </button>
-
-    <!-- DESKTOP -->
+    <!-- DESKTOP NAV -->
     <nav class="header__nav">
       <a routerLink="/" class="nav-link">Главная</a>
 
@@ -30,17 +27,22 @@
       <a routerLink="/about" class="nav-link">Обо мне</a>
       <a routerLink="/contacts" class="nav-link">Контакты</a>
     </nav>
+
+    <!-- BURGER BUTTON (Visible only on mobile) -->
+    <button class="header__burger" (click)="toggleMenu()">
+      ☰
+    </button>
+
   </div>
+</header>
 
-  <!-- FULLSCREEN MOBILE MENU -->
+@if (isMenuOpen()) {
   <div class="menu" [class.menu--open]="isMenuOpen()">
-
     <button class="menu__close" (click)="closeMenu()">
       ✕
     </button>
 
     <div class="menu__inner">
-
       <a class="menu__link menu__link--large"
          routerLink="/"
          (click)="closeMenu()">
@@ -72,8 +74,6 @@
          (click)="closeMenu()">
         Контакты
       </a>
-
     </div>
-
   </div>
-</header>
+}

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, effect, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, effect, HostListener, signal} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {PORTFOLIO_CATEGORIES} from "../../../shared/constants/portfolio-categories";
 import {PortfolioCategory} from "../../../shared/interfaces/portfolio-category.interface";
@@ -16,6 +16,10 @@ export class HeaderComponent {
 
   readonly isMenuOpen = signal(false);
 
+  readonly isScrolled = signal(false);
+
+  private lastScrollY = 0;
+
   constructor() {
     effect(() => {
       const open = this.isMenuOpen();
@@ -30,5 +34,24 @@ export class HeaderComponent {
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
+  }
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    const currentScroll = window.scrollY;
+
+    if (Math.abs(currentScroll - this.lastScrollY) < 10) {
+      return;
+    }
+
+    if (currentScroll <= 10) {
+      this.isScrolled.set(false);
+    } else if (currentScroll > this.lastScrollY) {
+      this.isScrolled.set(true);
+    } else {
+      this.isScrolled.set(false);
+    }
+
+    this.lastScrollY = currentScroll;
   }
 }
