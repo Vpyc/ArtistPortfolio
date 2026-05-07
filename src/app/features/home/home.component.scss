@@ -42,12 +42,6 @@
 @media (max-width: 768px) {
   .hero {
 
-    &__title {
-      h1 {
-        font-size: clamp(2.8rem, 14vw, 4.5rem);
-      }
-    }
-
     &__subtitle {
       font-size: 2rem;
     }

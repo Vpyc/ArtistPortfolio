@@ -104,4 +104,10 @@ h3 {
   font-weight: 700;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+}
+
 
