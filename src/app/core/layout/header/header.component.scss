@@ -69,8 +69,8 @@
   left: 0;
   z-index: 50;
 
-  background: white;
-  color: black;
+  background: var(--primary);
+  color: var(--background);
 
   padding: 10px;
   border-radius: 8px;
@@ -107,7 +107,6 @@
 
   a {
     text-decoration: none;
-    color: black;
 
     transition: color 0.2s ease;
 
