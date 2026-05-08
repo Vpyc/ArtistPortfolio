@@ -1,0 +1,25 @@
+:root {
+  /* spacing */
+
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* radius */
+
+  --radius: 10px;
+
+  /* layout */
+
+  --container-width: 1200px;
+
+  /* transitions */
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.8s ease;
+}
