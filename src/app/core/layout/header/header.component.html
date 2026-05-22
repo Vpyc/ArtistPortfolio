@@ -37,8 +37,15 @@
     </nav>
 
     <!-- BURGER BUTTON (Visible only on mobile) -->
-    <button class="header__burger" (click)="toggleMenu()">
-      ☰
+    <button
+      class="header__burger"
+      [class.header__burger--open]="isMenuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
   </div>
@@ -47,9 +54,6 @@
 <!-- MOBILE NAV -->
 <div class="flex flex-align-center flex-justify-center menu"
      [class.menu--open]="isMenuOpen()">
-  <button class="menu__close" (click)="closeMenu()">
-    ✕
-  </button>
 
   <div class="flex flex-direction-column menu__inner">
     @for (item of navigation(); track item.label) {
