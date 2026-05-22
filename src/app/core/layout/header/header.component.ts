@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, Component, effect, HostListener, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, effect, HostListener, Signal, signal} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {PORTFOLIO_CATEGORIES} from "../../../shared/constants/portfolio-categories";
 import {PortfolioCategory} from "../../../shared/interfaces/portfolio-category.interface";
+import {NavigationItem} from "../../../shared/interfaces/navigation.interface";
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,28 @@ export class HeaderComponent {
   readonly isMenuOpen = signal(false);
 
   readonly isScrolled = signal(false);
+
+  protected readonly navigation: Signal<NavigationItem[]> = computed(() => [
+    {
+      label: 'Главная',
+      link: '/',
+    },
+    {
+      label: 'Портфолио',
+      children: this.categories.map(category => ({
+        label: category.title,
+        link: `/portfolio/${category.slug}`,
+      })),
+    },
+    {
+      label: 'Обо мне',
+      link: '/about',
+    },
+    {
+      label: 'Контакты',
+      link: '/contacts',
+    },
+  ]);
 
   private lastScrollY = 0;
 

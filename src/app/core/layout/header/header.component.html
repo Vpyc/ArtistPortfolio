@@ -1,31 +1,39 @@
 <header class="header"
         [class.header--scrolled]="isScrolled()">
-  <div class="header__container">
+  <div class="container flex flex-justify-space-between flex-align-center header__container ">
 
     <div class="header__logo">
       <a routerLink="/" (click)="closeMenu()">LOGO</a>
     </div>
 
     <!-- DESKTOP NAV -->
-    <nav class="header__nav">
-      <a routerLink="/" class="nav-link">Главная</a>
+    <nav class="flex flex-align-center header__nav">
+      @for (item of navigation(); track item.label) {
+        @if (item.children) {
+          <div class="nav-item">
+            <span class="nav-link">
+              {{ item.label }} ▾
+            </span>
 
-      <div class="nav-item">
-        <span class="nav-link">Портфолио ▾</span>
-
-        <ul class="dropdown">
-          @for (category of categories; track category.slug) {
-            <li>
-              <a [routerLink]="['/portfolio', category.slug]">
-                {{ category.title }}
-              </a>
-            </li>
-          }
-        </ul>
-      </div>
-
-      <a routerLink="/about" class="nav-link">Обо мне</a>
-      <a routerLink="/contacts" class="nav-link">Контакты</a>
+            <ul class="dropdown">
+              @for (child of item.children; track child.link) {
+                <li>
+                  <a [routerLink]="child.link">
+                    {{ child.label }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+        } @else {
+          <a
+            [routerLink]="item.link"
+            class="nav-link"
+          >
+            {{ item.label }}
+          </a>
+        }
+      }
     </nav>
 
     <!-- BURGER BUTTON (Visible only on mobile) -->
@@ -36,44 +44,42 @@
   </div>
 </header>
 
-@if (isMenuOpen()) {
-  <div class="menu" [class.menu--open]="isMenuOpen()">
-    <button class="menu__close" (click)="closeMenu()">
-      ✕
-    </button>
+<!-- MOBILE NAV -->
+<div class="flex flex-align-center flex-justify-center menu"
+     [class.menu--open]="isMenuOpen()">
+  <button class="menu__close" (click)="closeMenu()">
+    ✕
+  </button>
 
-    <div class="menu__inner">
-      <a class="menu__link menu__link--large"
-         routerLink="/"
-         (click)="closeMenu()">
-        Главная
-      </a>
+  <div class="flex flex-direction-column menu__inner">
+    @for (item of navigation(); track item.label) {
 
-      <div class="menu__section">
-        <div class="menu__label">Портфолио</div>
+      @if (item.children) {
+        <div class="flex flex-direction-column menu__section">
+          <div class="menu__label">
+            {{ item.label }}
+          </div>
 
-        @for (category of categories; track category.slug) {
-          <a
-            class="menu__link menu__link--large menu__link--nested"
-            [routerLink]="['/portfolio', category.slug]"
-            (click)="closeMenu()"
-          >
-            {{ category.title }}
-          </a>
-        }
-      </div>
-
-      <a class="menu__link menu__link--large"
-         routerLink="/about"
-         (click)="closeMenu()">
-        Обо мне
-      </a>
-
-      <a class="menu__link menu__link--large"
-         routerLink="/contacts"
-         (click)="closeMenu()">
-        Контакты
-      </a>
-    </div>
+          @for (child of item.children; track child.link) {
+            <a
+              class="menu__link menu__link--large menu__link--nested"
+              [routerLink]="child.link"
+              (click)="closeMenu()"
+            >
+              {{ child.label }}
+            </a>
+          }
+        </div>
+      } @else {
+        <a
+          class="menu__link menu__link--large"
+          [routerLink]="item.link"
+          (click)="closeMenu()"
+        >
+          {{ item.label }}
+        </a>
+      }
+    }
   </div>
-}
+</div>
+
