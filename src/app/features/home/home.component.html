@@ -1,17 +1,20 @@
 <app-hero-section [imageUrl]="hero().imageUrl">
   <div hero-title class="hero__title">
-    <h1>ТЕРЕЩЕНКО</h1>
-    <h1>ЮЛИЯ</h1>
+    <h1>{{ content.hero.title[0] }}</h1>
+    <h1>{{ content.hero.title[1] }}</h1>
   </div>
 
   <h2 hero-subtitle class="hero__subtitle">
-    Художник
+    {{ content.hero.subtitle }}
   </h2>
 
   <div hero-actions class="hero__actions">
-    <button class="btn btn-primary" (click)="scrollToWorks()">Портфолио</button>
+    <button class="btn btn-primary" (click)="scrollToWorks()">
+      {{ content.hero.ctaPrimary }}
+    </button>
+
     <a class="btn btn-outline" [routerLink]="['/contacts']">
-      Заказать
+      {{ content.hero.ctaSecondary }}
     </a>
   </div>
 </app-hero-section>

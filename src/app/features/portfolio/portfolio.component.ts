@@ -2,12 +2,12 @@ import {ChangeDetectionStrategy, Component, computed, inject} from '@angular/cor
 import {ActivatedRoute} from "@angular/router";
 import {toSignal} from "@angular/core/rxjs-interop";
 import {map} from "rxjs";
-import {CATEGORY_PAGES} from "../../shared/constants/category-pages";
 import {PortfolioCategorySlugEnum} from "../../shared/enums/portfolio-category-slug.enum";
 import {HeroSectionComponent} from "../../shared/components/hero-section/hero-section.component";
 import {HeroSizeEnum} from "../../shared/enums/hero-size.enum";
 import {LinkButtonSectionComponent} from "../../shared/components/link-button-section/link-button-section.component";
 import {PageRendererComponent} from "../../shared/components/page-renderer/page-renderer.component";
+import {PageService} from "../../shared/services/page.service";
 
 @Component({
   selector: 'app-portfolio',
@@ -23,6 +23,7 @@ import {PageRendererComponent} from "../../shared/components/page-renderer/page-
 })
 export class PortfolioComponent {
   private route = inject(ActivatedRoute);
+  private readonly pageService = inject(PageService);
 
   private category = toSignal(
     this.route.paramMap.pipe(
@@ -35,6 +36,8 @@ export class PortfolioComponent {
     { initialValue: PortfolioCategorySlugEnum.InteriorPainting }
   );
 
-  categoryPage = computed(() => CATEGORY_PAGES[this.category()]);
+  protected readonly categoryPage = computed(() =>
+    this.pageService.getPortfolioPage(this.category())
+  );
   protected readonly HeroSizeEnum = HeroSizeEnum;
 }

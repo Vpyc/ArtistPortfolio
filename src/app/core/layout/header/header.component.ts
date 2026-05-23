@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import {PORTFOLIO_CATEGORIES} from "../../../shared/constants/portfolio-categories";
 import {PortfolioCategory} from "../../../shared/interfaces/portfolio-category.interface";
 import {NavigationItem} from "../../../shared/interfaces/navigation.interface";
+import {NAVIGATION_CONTENT} from "../../../content/shared/navigation.content";
 
 @Component({
   selector: 'app-header',
@@ -19,27 +20,21 @@ export class HeaderComponent {
 
   readonly isScrolled = signal(false);
 
-  protected readonly navigation: Signal<NavigationItem[]> = computed(() => [
-    {
-      label: 'Главная',
-      link: '/',
-    },
-    {
-      label: 'Портфолио',
-      children: this.categories.map(category => ({
-        label: category.title,
-        link: `/portfolio/${category.slug}`,
-      })),
-    },
-    {
-      label: 'Обо мне',
-      link: '/about',
-    },
-    {
-      label: 'Контакты',
-      link: '/contacts',
-    },
-  ]);
+  protected readonly navigation: Signal<NavigationItem[]> = computed(() => {
+    return NAVIGATION_CONTENT.items.map(item => {
+      if (item.useCategories) {
+        return {
+          label: item.label,
+          children: this.categories.map(category => ({
+            label: category.title,
+            link: `/portfolio/${category.slug}`,
+          })),
+        };
+      }
+
+      return item;
+    });
+  });
 
   private lastScrollY = 0;
 

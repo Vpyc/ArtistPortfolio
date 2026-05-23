@@ -1,6 +1,6 @@
-import {SectionTypeEnum} from "../enums/section-type.enum";
-import {Page} from "../interfaces/page.interface";
-import {getMediaUrl} from "../utils/media.utils";
+import {Page} from "../../shared/interfaces/page.interface";
+import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
+import {getMediaUrl} from "../../shared/utils/media.utils";
 
 export const ABOUT_PAGE: Page = {
     groups: [

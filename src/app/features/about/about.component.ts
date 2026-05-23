@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {ABOUT_PAGE} from "../../shared/constants/about-page";
 import {PageRendererComponent} from "../../shared/components/page-renderer/page-renderer.component";
+import {ABOUT_PAGE} from "../../content/pages/about-page";
 
 @Component({
   selector: 'app-about',

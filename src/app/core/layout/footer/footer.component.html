@@ -1,26 +1,21 @@
 <footer>
   <div class="container">
 
-    <!-- links -->
     <div class="links">
-      <a
-        href="https://www.behance.net/"
-        target="_blank"
-        rel="noopener noreferrer">
-        Behance
-      </a>
+      @for (link of content.links; track link.href) {
+        <a
+          [href]="link.href"
+          target="_blank"
+          rel="noopener noreferrer">
 
-      <a
-        href="https://t.me/+79151598778"
-        target="_blank"
-        rel="noopener noreferrer">
-        Telegram
-      </a>
+          {{ link.label }}
+
+        </a>
+      }
     </div>
 
-    <!-- copyright -->
     <p class="copyright">
-      © {{ year }} Портфолио дизайнера
+      © {{ year }} {{ content.copyright }}
     </p>
 
   </div>

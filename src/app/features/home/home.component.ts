@@ -5,6 +5,7 @@ import {HeroSectionComponent} from "../../shared/components/hero-section/hero-se
 import {WorkService} from "../../shared/services/works.service";
 import {Work} from "../../shared/interfaces/work.interface";
 import {RouterLink} from "@angular/router";
+import {HOME_CONTENT} from "../../content/shared/home.content";
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,8 @@ import {RouterLink} from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
+  protected readonly content = HOME_CONTENT;
+
   private readonly workService: WorkService = inject(WorkService);
 
   protected readonly hero: Signal<Work> = this.workService.hero;
