@@ -1,45 +1,47 @@
 import {Page} from "../../shared/interfaces/page.interface";
-import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
 import {MEDIA} from "../media/media.registry";
+import {
+  createSplitSection,
+  createTextSection,
+  createTimelineSection
+} from "../../shared/factories/section-builder.factory";
 
 export const ABOUT_PAGE: Page = {
     groups: [
       {
         textColor: '--primary',
         sections: [
-          {
-            type: SectionTypeEnum.Text,
+          createTextSection({
+            id: 'about-text',
             text: 'Обо мне',
-          },
-          {
-            type: SectionTypeEnum.Split,
-            image: MEDIA.about.portrait,
+          }),
+          createSplitSection({
+            id: 'about-split',
             title: 'Терещенко Юлия Юрьевна',
-            description: 'Победа наконец то может быть пожалуйста????',
-          },
+            image: MEDIA.about.portrait,
+            description: 'Победа наконец то может быть пожалуйста????'
+          }),
         ]
       },
       {
         textColor: '--foreground',
         sections: [
-          {
-            type: SectionTypeEnum.Timeline,
-            title: 'Достижения',
-            items: [
-              {
-                date: new Date(2025, 0, 1),
-                title: 'Победа пожалуйста',
-                description: 'Возможная победа побед в победе',
-                image: MEDIA.paintings.main,
-              },
-              {
-                date: new Date(2025, 0, 1),
-                title: 'Победа пожалуйста 2',
-                description: 'Возможная победа побед в победе 2',
-                image: MEDIA.interiorPainting.gallery1,
-              },
-            ]
-          },
+          createTextSection({
+            id: 'about-text-timeline',
+            text: 'Достижения',
+          }),
+          createTimelineSection({
+            id: 'about-timeline-1',
+            title: 'Победа пожалуйста',
+            description: 'Возможная победа побед в победе',
+            image: MEDIA.paintings.main,
+          }),
+          createTimelineSection({
+            id: 'about-timeline-2',
+            title: 'Победа пожалуйста 2',
+            description: 'Возможная победа побед в победе 2',
+            image: MEDIA.interiorPainting.gallery1,
+          }),
         ]
       }
     ]

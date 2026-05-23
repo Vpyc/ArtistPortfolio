@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {PageRendererComponent} from "../../shared/components/page-renderer/page-renderer.component";
-import {ABOUT_PAGE} from "../../content/pages/about-page";
+import {PageService} from "../../shared/services/page.service";
 
 @Component({
   selector: 'app-about',
@@ -13,5 +13,7 @@ import {ABOUT_PAGE} from "../../content/pages/about-page";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent {
-  protected aboutPage = ABOUT_PAGE;
+  private readonly pageService = inject(PageService);
+
+  protected aboutPage = this.pageService.getAboutPage();
 }

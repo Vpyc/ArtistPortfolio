@@ -1,6 +1,6 @@
 import {Page} from "../../shared/interfaces/page.interface";
-import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
 import {MEDIA} from "../media/media.registry";
+import {createSplitSection} from "../../shared/factories/section-builder.factory";
 
 export const PAINTING_PAGE: Page = {
   hero: {
@@ -12,15 +12,12 @@ export const PAINTING_PAGE: Page = {
       backgroundColor: '--card',
       textColor: '--background',
       sections: [
-        {
-          type: SectionTypeEnum.Split,
-          image: MEDIA.interiorPainting.gallery1,
+        createSplitSection({
+          id: 'painting-split',
           title: 'Аквапарк "Мореон"',
-          description: 'Победа наконец то может быть пожалуйста????',
-          layout: {
-            splitLine: true,
-          }
-        }
+          image: MEDIA.interiorPainting.gallery1,
+          description: 'Победа наконец то может быть пожалуйста????'
+        }),
       ]
     }
   ]

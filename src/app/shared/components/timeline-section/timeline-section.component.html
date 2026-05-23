@@ -1,43 +1,33 @@
 <section class="timeline">
-
-  @if (section().title) {
-    <div class="timeline__title">
-      <h2>{{ section().title }}</h2>
-    </div>
-  }
-
   <div class="timeline__container">
-    @for (item of timelineItems(); track $index) {
-      <div class="timeline__item">
+    <div class="timeline__item">
 
-        <div class="timeline__date">
-          {{ item.date | date:'yyyy' }}
-        </div>
-
-        <div class="timeline__content">
-
-          <div class="timeline__text">
-            <h3 class="timeline__item-title">
-              {{ item.title }}
-            </h3>
-
-            <p class="timeline__description">
-              {{ item.description }}
-            </p>
-          </div>
-
-          <div class="timeline__image-wrapper">
-            <img
-              [ngSrc]="item.image"
-              [alt]="item.title"
-              class="timeline__image"
-              fill
-            />
-          </div>
-
-        </div>
+      <div class="timeline__date">
+        {{ section().date | date:'yyyy' }}
       </div>
-    }
-  </div>
 
+      <div class="timeline__content">
+
+        <div class="timeline__text">
+          <h3 class="timeline__item-title">
+            {{ section().title }}
+          </h3>
+
+          <p class="timeline__description">
+            {{ section().description }}
+          </p>
+        </div>
+
+        <div class="timeline__image-wrapper">
+          <img
+            [ngSrc]="section().image"
+            [alt]="section().title"
+            class="timeline__image"
+            fill
+          />
+        </div>
+
+      </div>
+    </div>
+  </div>
 </section>

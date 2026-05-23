@@ -1,16 +1,15 @@
 import {SectionTypeEnum} from "../enums/section-type.enum";
-import {GalleryLayoutEnum} from "../enums/gallery-layout.enum";
-import {TimelineItem} from "./timeline-items.interface";
 import {GalleryImage} from "./gallery-image.interface";
+import {BaseSection} from "./base-section.interface";
 
-export interface ImageSection {
+export interface ImageSection extends BaseSection {
   type: SectionTypeEnum.Image;
   title?: string;
   description?: string;
   image: string;
 }
 
-export interface GallerySection {
+export interface GallerySection extends BaseSection {
   type: SectionTypeEnum.Gallery;
   images: GalleryImage[];
   layout?: {
@@ -18,7 +17,7 @@ export interface GallerySection {
   };
 }
 
-export interface SplitSection {
+export interface SplitSection extends BaseSection {
   type: SectionTypeEnum.Split;
   image: string;
   title: string;
@@ -31,13 +30,15 @@ export interface SplitSection {
   }
 }
 
-export interface TextSection {
+export interface TextSection extends BaseSection {
   type: SectionTypeEnum.Text;
   text: string;
 }
 
-export interface TimelineSection {
+export interface TimelineSection extends BaseSection {
   type: SectionTypeEnum.Timeline;
-  title?: string;
-  items: TimelineItem[];
+  date: Date;
+  title: string;
+  description: string;
+  image: string;
 }

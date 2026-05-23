@@ -1,6 +1,6 @@
 import {Page} from "../../shared/interfaces/page.interface";
-import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
 import {MEDIA} from "../media/media.registry";
+import {createGallerySection, createSplitSection} from "../../shared/factories/section-builder.factory";
 
 export const INTERIOR_PAINTING_PAGE: Page = {
   hero: {
@@ -12,17 +12,14 @@ export const INTERIOR_PAINTING_PAGE: Page = {
       backgroundColor: '--background',
       textColor: '--primary',
       sections: [
-        {
-          type: SectionTypeEnum.Split,
-          image: MEDIA.interiorPainting.gallery1,
+        createSplitSection({
+          id: 'panno-split',
           title: 'Аквапарк "Мореон"',
-          description: 'Победа наконец то может быть пожалуйста????',
-          layout: {
-            splitLine: true,
-          }
-        },
-        {
-          type: SectionTypeEnum.Gallery,
+          image: MEDIA.interiorPainting.gallery1,
+          description: 'Победа наконец то может быть пожалуйста????'
+        }),
+        createGallerySection({
+          id: 'interior-painting-moreon',
           images: [
             {
               src: MEDIA.interiorPainting.gallery1,
@@ -51,34 +48,28 @@ export const INTERIOR_PAINTING_PAGE: Page = {
               src: MEDIA.paintings.main,
             },
           ],
-          layout: {
-            gap: 36,
-          }
-        }
+        })
       ]
     },
     {
       backgroundColor: '--primary-foreground',
       textColor: '--primary',
       sections: [
-        {
-          type: SectionTypeEnum.Split,
-          image: MEDIA.interiorPainting.gallery1,
+        createSplitSection({
+          id: 'panno-split',
           title: 'Аквапарк "Мореон"',
-          description: 'Победа наконец то может быть пожалуйста????',
-          layout: {
-            splitLine: true,
-          }
-        },
-        {
-          type: SectionTypeEnum.Gallery,
+          image: MEDIA.interiorPainting.gallery1,
+          description: 'Победа наконец то может быть пожалуйста????'
+        }),
+        createGallerySection({
+          id: 'interior-painting-moreon',
           images: [
             {
               src: MEDIA.interiorPainting.gallery1,
-              featured: true
             },
             {
               src: MEDIA.paintings.livePaint,
+              featured: true
             },
             {
               src: MEDIA.panels.main,
@@ -92,20 +83,15 @@ export const INTERIOR_PAINTING_PAGE: Page = {
             },
             {
               src: MEDIA.paintings.livePaint,
-              featured: true
             },
             {
               src: MEDIA.panels.main,
             },
             {
               src: MEDIA.paintings.main,
-              featured: true
             },
           ],
-          layout: {
-            gap: 36,
-          }
-        }
+        })
       ]
     },
   ]

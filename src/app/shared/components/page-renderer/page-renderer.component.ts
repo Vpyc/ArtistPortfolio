@@ -1,5 +1,4 @@
 import {ChangeDetectionStrategy, Component, input, InputSignal, Type} from '@angular/core';
-import {Section} from "../../models/sections.type";
 import {SectionTypeEnum} from "../../enums/section-type.enum";
 import {ImageSectionComponent} from "../image-section/image-section.component";
 import {GallerySectionComponent} from "../gallery-section/gallery-section.component";
@@ -9,6 +8,8 @@ import {NgComponentOutlet, NgStyle} from "@angular/common";
 import {Page} from "../../interfaces/page.interface";
 import {TimelineSectionComponent} from "../timeline-section/timeline-section.component";
 import {RevealDirective} from "../../directives/reveal.directive";
+import {BaseSection} from "../../interfaces/base-section.interface";
+import {Section} from "../../models/sections.type";
 
 @Component({
   selector: 'app-page-renderer',
