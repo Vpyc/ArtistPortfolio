@@ -1,11 +1,12 @@
   import {Page} from "../interfaces/page.interface";
   import {SectionTypeEnum} from "../enums/section-type.enum";
+  import { getMediaUrl } from "../utils/media.utils";
 
   export const CATEGORY_PAGES: Record<string, Page> = {
     'interior-painting': {
       hero: {
         title: 'Интерьерная роспись',
-        backgroundImage: 'assets/interier.png'
+        backgroundImage: getMediaUrl('interier.png')
       },
       groups: [
         {
@@ -14,7 +15,7 @@
           sections: [
             {
               type: SectionTypeEnum.Split,
-              image: 'assets/interier.png',
+              image: getMediaUrl('interier.png'),
               title: 'Аквапарк "Мореон"',
               description: 'Победа наконец то может быть пожалуйста????',
               layout: {
@@ -25,30 +26,30 @@
               type: SectionTypeEnum.Gallery,
               images: [
                 {
-                  src: 'assets/interier.png',
+                  src: getMediaUrl('interier.png'),
                 },
                 {
-                  src: 'assets/live-paint.png',
+                  src: getMediaUrl('live-paint.png'),
                   featured: true
                 },
                 {
-                  src: 'assets/panno.png',
+                  src: getMediaUrl('panno.png'),
                 },
                 {
-                  src: 'assets/paint.png',
+                  src: getMediaUrl('paint.png'),
                   featured: true
                 },
                 {
-                  src: 'assets/interier.png',
+                  src: getMediaUrl('interier.png'),
                 },
                 {
-                  src: 'assets/live-paint.png',
+                  src: getMediaUrl('live-paint.png'),
                 },
                 {
-                  src: 'assets/panno.png',
+                  src: getMediaUrl('panno.png'),
                 },
                 {
-                  src: 'assets/paint.png',
+                  src: getMediaUrl('paint.png'),
                 },
               ],
               layout: {
@@ -63,7 +64,7 @@
           sections: [
             {
               type: SectionTypeEnum.Split,
-              image: 'assets/interier.png',
+              image: getMediaUrl('interier.png'),
               title: 'Аквапарк "Мореон"',
               description: 'Победа наконец то может быть пожалуйста????',
               layout: {
@@ -74,31 +75,31 @@
               type: SectionTypeEnum.Gallery,
               images: [
                 {
-                  src: 'assets/interier.png',
+                  src: getMediaUrl('interier.png'),
                   featured: true
                 },
                 {
-                  src: 'assets/live-paint.png',
+                  src: getMediaUrl('live-paint.png'),
                 },
                 {
-                  src: 'assets/panno.png',
+                  src: getMediaUrl('panno.png'),
                 },
                 {
-                  src: 'assets/paint.png',
+                  src: getMediaUrl('paint.png'),
                   featured: true
                 },
                 {
-                  src: 'assets/interier.png',
+                  src: getMediaUrl('interier.png'),
                 },
                 {
-                  src: 'assets/live-paint.png',
+                  src: getMediaUrl('live-paint.png'),
                   featured: true
                 },
                 {
-                  src: 'assets/panno.png',
+                  src: getMediaUrl('panno.png'),
                 },
                 {
-                  src: 'assets/paint.png',
+                  src: getMediaUrl('paint.png'),
                   featured: true
                 },
               ],
@@ -114,7 +115,7 @@
     'interior-art': {
       hero: {
         title: 'Интерьерная картина',
-        backgroundImage: 'assets/paint.png'
+        backgroundImage: getMediaUrl('paint.png')
       },
       groups: [
         {
@@ -123,7 +124,7 @@
           sections: [
             {
               type: SectionTypeEnum.Split,
-              image: 'assets/interier.png',
+              image: getMediaUrl('interier.png'),
               title: 'Аквапарк "Мореон"',
               description: 'Победа наконец то может быть пожалуйста????',
               layout: {
@@ -138,7 +139,7 @@
     'panels': {
       hero: {
         title: 'Абстрактное панно',
-        backgroundImage: 'assets/panno.png'
+        backgroundImage: getMediaUrl('panno.png')
       },
       groups: [
         {
@@ -147,7 +148,7 @@
           sections: [
             {
               type: SectionTypeEnum.Split,
-              image: 'assets/interier.png',
+              image: getMediaUrl('interier.png'),
               title: 'Аквапарк "Мореон"',
               description: 'Победа наконец то может быть пожалуйста????',
               layout: {
@@ -162,7 +163,7 @@
     'painting': {
       hero: {
         title: 'Живопись',
-        backgroundImage: 'assets/live-paint.png'
+        backgroundImage: getMediaUrl('live-paint.png')
       },
       groups: [
         {
@@ -171,7 +172,7 @@
           sections: [
             {
               type: SectionTypeEnum.Split,
-              image: 'assets/interier.png',
+              image: getMediaUrl('interier.png'),
               title: 'Аквапарк "Мореон"',
               description: 'Победа наконец то может быть пожалуйста????',
               layout: {
