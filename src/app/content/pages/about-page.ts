@@ -1,6 +1,6 @@
 import {Page} from "../../shared/interfaces/page.interface";
 import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
-import {getMediaUrl} from "../../shared/utils/media.utils";
+import {MEDIA} from "../media/media.registry";
 
 export const ABOUT_PAGE: Page = {
     groups: [
@@ -13,7 +13,7 @@ export const ABOUT_PAGE: Page = {
           },
           {
             type: SectionTypeEnum.Split,
-            image: getMediaUrl('about.jpg'),
+            image: MEDIA.about.portrait,
             title: 'Терещенко Юлия Юрьевна',
             description: 'Победа наконец то может быть пожалуйста????',
           },
@@ -30,13 +30,13 @@ export const ABOUT_PAGE: Page = {
                 date: new Date(2025, 0, 1),
                 title: 'Победа пожалуйста',
                 description: 'Возможная победа побед в победе',
-                image: getMediaUrl('paint.png'),
+                image: MEDIA.paintings.main,
               },
               {
                 date: new Date(2025, 0, 1),
                 title: 'Победа пожалуйста 2',
                 description: 'Возможная победа побед в победе 2',
-                image: getMediaUrl('interier.png'),
+                image: MEDIA.interiorPainting.gallery1,
               },
             ]
           },

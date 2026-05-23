@@ -1,11 +1,11 @@
 import {Page} from "../../shared/interfaces/page.interface";
-import {getMediaUrl} from "../../shared/utils/media.utils";
 import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
+import {MEDIA} from "../media/media.registry";
 
 export const PANELS_PAGE: Page = {
   hero: {
     title: 'Абстрактное панно',
-    backgroundImage: getMediaUrl('panno.png')
+    backgroundImage: MEDIA.panels.main
   },
   groups: [
     {
@@ -14,7 +14,7 @@ export const PANELS_PAGE: Page = {
       sections: [
         {
           type: SectionTypeEnum.Split,
-          image: getMediaUrl('interier.png'),
+          image: MEDIA.interiorPainting.gallery1,
           title: 'Аквапарк "Мореон"',
           description: 'Победа наконец то может быть пожалуйста????',
           layout: {

@@ -1,11 +1,11 @@
 import {Page} from "../../shared/interfaces/page.interface";
-import {getMediaUrl} from "../../shared/utils/media.utils";
 import {SectionTypeEnum} from "../../shared/enums/section-type.enum";
+import {MEDIA} from "../media/media.registry";
 
 export const INTERIOR_PAINTING_PAGE: Page = {
   hero: {
     title: 'Интерьерная роспись',
-    backgroundImage: getMediaUrl('interier.png')
+    backgroundImage: MEDIA.interiorPainting.hero
   },
   groups: [
     {
@@ -14,7 +14,7 @@ export const INTERIOR_PAINTING_PAGE: Page = {
       sections: [
         {
           type: SectionTypeEnum.Split,
-          image: getMediaUrl('interier.png'),
+          image: MEDIA.interiorPainting.gallery1,
           title: 'Аквапарк "Мореон"',
           description: 'Победа наконец то может быть пожалуйста????',
           layout: {
@@ -25,30 +25,30 @@ export const INTERIOR_PAINTING_PAGE: Page = {
           type: SectionTypeEnum.Gallery,
           images: [
             {
-              src: getMediaUrl('interier.png'),
+              src: MEDIA.interiorPainting.gallery1,
             },
             {
-              src: getMediaUrl('live-paint.png'),
+              src: MEDIA.paintings.livePaint,
               featured: true
             },
             {
-              src: getMediaUrl('panno.png'),
+              src: MEDIA.panels.main,
             },
             {
-              src: getMediaUrl('paint.png'),
+              src: MEDIA.paintings.main,
               featured: true
             },
             {
-              src: getMediaUrl('interier.png'),
+              src: MEDIA.interiorPainting.gallery1,
             },
             {
-              src: getMediaUrl('live-paint.png'),
+              src: MEDIA.paintings.livePaint,
             },
             {
-              src: getMediaUrl('panno.png'),
+              src: MEDIA.panels.main,
             },
             {
-              src: getMediaUrl('paint.png'),
+              src: MEDIA.paintings.main,
             },
           ],
           layout: {
@@ -63,7 +63,7 @@ export const INTERIOR_PAINTING_PAGE: Page = {
       sections: [
         {
           type: SectionTypeEnum.Split,
-          image: getMediaUrl('interier.png'),
+          image: MEDIA.interiorPainting.gallery1,
           title: 'Аквапарк "Мореон"',
           description: 'Победа наконец то может быть пожалуйста????',
           layout: {
@@ -74,31 +74,31 @@ export const INTERIOR_PAINTING_PAGE: Page = {
           type: SectionTypeEnum.Gallery,
           images: [
             {
-              src: getMediaUrl('interier.png'),
+              src: MEDIA.interiorPainting.gallery1,
               featured: true
             },
             {
-              src: getMediaUrl('live-paint.png'),
+              src: MEDIA.paintings.livePaint,
             },
             {
-              src: getMediaUrl('panno.png'),
+              src: MEDIA.panels.main,
             },
             {
-              src: getMediaUrl('paint.png'),
+              src: MEDIA.paintings.main,
               featured: true
             },
             {
-              src: getMediaUrl('interier.png'),
+              src: MEDIA.interiorPainting.gallery1,
             },
             {
-              src: getMediaUrl('live-paint.png'),
+              src: MEDIA.paintings.livePaint,
               featured: true
             },
             {
-              src: getMediaUrl('panno.png'),
+              src: MEDIA.panels.main,
             },
             {
-              src: getMediaUrl('paint.png'),
+              src: MEDIA.paintings.main,
               featured: true
             },
           ],

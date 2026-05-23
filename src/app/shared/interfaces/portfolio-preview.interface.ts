@@ -1,9 +1,11 @@
 import {PortfolioCategorySlugEnum} from "../enums/portfolio-category-slug.enum";
 
-export interface Work {
-  id: string;
+export interface PortfolioPreview {
+  slug: PortfolioCategorySlugEnum;
+
   title: string;
-  category: PortfolioCategorySlugEnum;
-  description: string;
+
+  description?: string;
+
   imageUrl: string;
 }

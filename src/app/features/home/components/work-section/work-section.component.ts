@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component, inject, Signal} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
-import {WorkService} from "../../../../shared/services/works.service";
-import {Work} from "../../../../shared/interfaces/work.interface";
 import {RouterLink} from "@angular/router";
 import {RevealDirective} from "../../../../shared/directives/reveal.directive";
+import {PortfolioPreview} from "../../../../shared/interfaces/portfolio-preview.interface";
+import {PortfolioService} from "../../../../shared/services/portfolio.service";
 
 @Component({
   selector: 'app-work-section',
@@ -18,7 +18,7 @@ import {RevealDirective} from "../../../../shared/directives/reveal.directive";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorkSectionComponent {
-  private readonly workService: WorkService = inject(WorkService);
+  private readonly previewService: PortfolioService = inject(PortfolioService);
 
-  protected readonly works: Signal<Work[]> = this.workService.all;
+  protected readonly previews: Signal<PortfolioPreview[]> = this.previewService.previews;
 }
