@@ -66,6 +66,17 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "demo": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.demo.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false
             }
           },
           "defaultConfiguration": "production"
@@ -78,6 +89,9 @@
             },
             "development": {
               "buildTarget": "artist-portfolio:build:development"
+            },
+            "demo": {
+              "buildTarget": "artist-portfolio:build:demo"
             }
           },
           "defaultConfiguration": "development"

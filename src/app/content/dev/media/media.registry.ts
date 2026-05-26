@@ -1,4 +1,4 @@
-import {getMediaUrl} from "../../shared/utils/media.utils";
+import {getMediaUrl} from "../../../shared/utils/media.utils";
 
 export const MEDIA = {
 

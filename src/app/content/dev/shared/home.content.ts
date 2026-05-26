@@ -1,4 +1,4 @@
-import {PortfolioCategorySlugEnum} from "../../shared/enums/portfolio-category-slug.enum";
+import {PortfolioCategorySlugEnum} from "../../../shared/enums/portfolio-category-slug.enum";
 import {MEDIA} from "../media/media.registry";
 
 export const HOME_CONTENT = {

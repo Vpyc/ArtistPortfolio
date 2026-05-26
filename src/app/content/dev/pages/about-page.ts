@@ -1,10 +1,10 @@
-import {Page} from "../../shared/interfaces/page.interface";
+import {Page} from "../../../shared/interfaces/page.interface";
 import {MEDIA} from "../media/media.registry";
 import {
   createSplitSection,
   createTextSection,
   createTimelineSection
-} from "../../shared/factories/section-builder.factory";
+} from "../../../shared/factories/section-builder.factory";
 
 export const ABOUT_PAGE: Page = {
     groups: [

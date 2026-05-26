@@ -1,11 +1,11 @@
-import {Page} from "../../shared/interfaces/page.interface";
+import {Page} from "../../../shared/interfaces/page.interface";
 import {MEDIA} from "../media/media.registry";
-import {createSplitSection} from "../../shared/factories/section-builder.factory";
+import {createSplitSection} from "../../../shared/factories/section-builder.factory";
 
-export const PAINTING_PAGE: Page = {
+export const PANELS_PAGE: Page = {
   hero: {
-    title: 'Живопись',
-    backgroundImage: MEDIA.paintings.livePaint
+    title: 'Абстрактное панно',
+    backgroundImage: MEDIA.panels.main
   },
   groups: [
     {
@@ -13,7 +13,7 @@ export const PAINTING_PAGE: Page = {
       textColor: '--background',
       sections: [
         createSplitSection({
-          id: 'painting-split',
+          id: 'panno-split',
           title: 'Аквапарк "Мореон"',
           image: MEDIA.interiorPainting.gallery1,
           description: 'Победа наконец то может быть пожалуйста????'

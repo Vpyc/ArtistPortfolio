@@ -1,16 +1,29 @@
 import {Injectable} from "@angular/core";
 import {PortfolioCategorySlugEnum} from "../enums/portfolio-category-slug.enum";
 import {Page} from "../interfaces/page.interface";
-import {PAGE_MAPPING} from "../../content/pages/page-mapping";
-import {ABOUT_PAGE} from "../../content/pages/about-page";
+import {CONTENT} from "../../content";
+import {PortfolioPreview} from "../interfaces/portfolio-preview.interface";
 
 @Injectable({ providedIn: 'root' })
 export class PageService {
-  getPortfolioPage(slug: PortfolioCategorySlugEnum): Page {
-    return PAGE_MAPPING[slug];
+  public getPortfolioPage(slug: PortfolioCategorySlugEnum): Page {
+    return CONTENT.pages[slug];
   }
 
-  getAboutPage(): Page {
-    return ABOUT_PAGE;
+  public getAboutPage(): Page {
+    return CONTENT.aboutPage;
+  }
+
+  public getPortfolioPreviews(): PortfolioPreview[] {
+    return Object.values(PortfolioCategorySlugEnum).map(slug => {
+      const page = this.getPortfolioPage(slug);
+
+      return {
+        slug,
+        title: page.hero?.title ?? '',
+        imageUrl: page.hero?.backgroundImage ?? '',
+        description: CONTENT.shared.PREVIEW_DESCRIPTION_MAP[slug],
+      };
+    });
   }
 }

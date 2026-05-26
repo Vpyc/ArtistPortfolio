@@ -1,6 +1,6 @@
-import {Page} from "../../shared/interfaces/page.interface";
+import {Page} from "../../../shared/interfaces/page.interface";
 import {MEDIA} from "../media/media.registry";
-import {createGallerySection, createSplitSection} from "../../shared/factories/section-builder.factory";
+import {createGallerySection, createSplitSection} from "../../../shared/factories/section-builder.factory";
 
 export const INTERIOR_PAINTING_PAGE: Page = {
   hero: {

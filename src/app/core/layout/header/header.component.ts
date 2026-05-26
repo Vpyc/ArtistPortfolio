@@ -2,8 +2,8 @@ import {ChangeDetectionStrategy, Component, computed, effect, HostListener, Sign
 import { RouterLink } from '@angular/router';
 import {PORTFOLIO_CATEGORIES} from "../../../shared/constants/portfolio-categories";
 import {PortfolioCategory} from "../../../shared/interfaces/portfolio-category.interface";
+import {CONTENT} from "../../../content";
 import {NavigationItem} from "../../../shared/interfaces/navigation.interface";
-import {NAVIGATION_CONTENT} from "../../../content/shared/navigation.content";
 
 @Component({
   selector: 'app-header',
@@ -21,7 +21,7 @@ export class HeaderComponent {
   readonly isScrolled = signal(false);
 
   protected readonly navigation: Signal<NavigationItem[]> = computed(() => {
-    return NAVIGATION_CONTENT.items.map(item => {
+    return CONTENT.shared.NAVIGATION_CONTENT.items.map(item => {
       if (item.useCategories) {
         return {
           label: item.label,

@@ -1,16 +1,16 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {WorkSectionComponent} from "./components/work-section/work-section.component";
 import {LinkButtonSectionComponent} from "../../shared/components/link-button-section/link-button-section.component";
 import {HeroSectionComponent} from "../../shared/components/hero-section/hero-section.component";
 import {RouterLink} from "@angular/router";
-import {HOME_CONTENT} from "../../content/shared/home.content";
+import {CONTENT} from "../../content";
+import {HomePreviewSectionComponent} from "./components/home-preview-section/home-preview-section.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     HeroSectionComponent,
-    WorkSectionComponent,
+    HomePreviewSectionComponent,
     LinkButtonSectionComponent,
     HeroSectionComponent,
     RouterLink
@@ -20,9 +20,9 @@ import {HOME_CONTENT} from "../../content/shared/home.content";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-  protected readonly content = HOME_CONTENT;
+  protected readonly content = CONTENT.shared.HOME_CONTENT;
 
-  scrollToWorks() {
+  scrollToHomePreviews() {
     const el = document.getElementById('works');
     el?.scrollIntoView({ behavior: 'smooth' });
   }
