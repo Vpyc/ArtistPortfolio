@@ -10,5 +10,5 @@ export const FOOTER_CONTENT = {
     },
   ],
 
-  copyright: 'Портфолио дизайнера',
+  copyright: 'ДЕМО',
 };

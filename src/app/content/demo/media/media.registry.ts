@@ -7,17 +7,17 @@ export const MEDIA = {
   },
 
   paintings: {
-    main: getMediaUrl('paint.png'),
-    livePaint: getMediaUrl('live-paint.png')
+    main: getMediaUrl('paint.jpg'),
+    livePaint: getMediaUrl('live-paint.jpg')
   },
 
   panels: {
-    main: getMediaUrl('panno.png')
+    main: getMediaUrl('panno.jpg')
   },
 
   interiorPainting: {
-    hero: getMediaUrl('interier.png'),
-    gallery1: getMediaUrl('interier.png'),
+    hero: getMediaUrl('interier.jpg'),
+    gallery1: getMediaUrl('interier.jpg'),
   },
 
   about: {

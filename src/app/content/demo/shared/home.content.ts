@@ -5,7 +5,7 @@ export const HOME_CONTENT = {
   hero: {
     imageUrl: MEDIA.hero.main,
 
-    title: ['ТЕРЕЩЕНКО', 'ЮЛИЯ'],
+    title: ['ДЕМО', 'ХУДОЖНИК'],
     subtitle: 'Художник',
     ctaPrimary: 'Портфолио',
     ctaSecondary: 'Заказать',

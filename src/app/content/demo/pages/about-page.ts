@@ -17,7 +17,7 @@ export const ABOUT_PAGE: Page = {
           }),
           createSplitSection({
             id: 'about-split',
-            title: 'Терещенко Юлия Юрьевна',
+            title: 'Тестовый художник',
             image: MEDIA.about.portrait,
             description: 'Победа наконец то может быть пожалуйста????'
           }),
